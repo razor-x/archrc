@@ -5,7 +5,6 @@
     "start": "sudo curator"
   },
   "dependencies": {
-    "aconfmgr": "github:rxfork/aconfmgr",
     "config-curator": "^2.0.0"
   }
 }

@@ -54,12 +54,27 @@ install_aura () (
   puts 'Installed' 'Aura'
 )
 
-install_aconfmgr () {
+install_aconfmgr () (
   puts 'Installing' 'aconfmgr'
+
+  # UPSTREAM: Need aura support
+  # aura -A --noconfirm aconfmgr-git
+
+  mkdir tmp
+  cd tmp
+  git clone https://aur.archlinux.org/aconfmgr-git.git
+  cd aconfmgr-git
+  sed -i 's|CyberShadow/aconfmgr|rxfork/aconfmgr#branch=aura-aur-helper|g' PKGBUILD
+  makepkg -s
+  sudo pacman -U --noconfirm ./aconfmgr-git-*.pkg.tar.zst
+  cd ..
+  cd ..
+  rm -rf tmp
+
   mkdir -p aconfmgr
-  ./node_modules/.bin/aconfmgr --aur-helper aura --config aconfmgr check
+  aconfmgr --aur-helper aura --config aconfmgr check
   puts 'Installed' 'aconfmgr'
-}
+)
 
 main () {
   if [[ $(id -u) == 0 ]]; then
