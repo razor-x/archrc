@@ -24,7 +24,7 @@ set_hostname () {
 install_config () {
   puts 'Installing' 'Config Curator'
   sudo -S pacman -S --noconfirm rsync nodejs npm
-  npm install
+  npm ci
   puts 'Installed' 'Config Curator'
 
   puts 'Installing' 'Config'
