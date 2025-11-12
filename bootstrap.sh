@@ -24,7 +24,6 @@ set_hostname () {
 install_config () {
   puts 'Installing' 'Config Curator'
   sudo -S pacman -S --noconfirm rsync nodejs npm
-  rm -rf node_modules
   npm install
   puts 'Installed' 'Config Curator'
 
@@ -43,7 +42,6 @@ generate_locale () {
 install_aura () (
   puts 'Installing' 'Aura'
   sudo -S pacman -S --noconfirm git base-devel cargo
-  rm -rf tmp
   mkdir tmp
   cd tmp
   git clone https://aur.archlinux.org/aura.git
@@ -71,6 +69,9 @@ main () {
 
   echo 'Pre-authenticate for sudo.'
   sudo -S echo
+
+  rm -rf node_modules
+  rm -rf tmp
 
   set_hostname ${1:-}
   install_config
