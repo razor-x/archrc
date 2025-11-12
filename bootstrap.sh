@@ -48,6 +48,9 @@ install_aura () (
   cd aura
   makepkg -s
   sudo pacman -U --noconfirm ./aura-*.pkg.tar.zst
+  cd ..
+  cd ..
+  rm -rf tmp
   puts 'Installed' 'Aura'
 )
 
