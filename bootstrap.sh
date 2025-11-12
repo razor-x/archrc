@@ -41,7 +41,7 @@ generate_locale () {
 
 install_aura () (
   puts 'Installing' 'Aura'
-  sudo -S pacman -S --noconfirm git cargo
+  sudo -S pacman -S --noconfirm git base-devel cargo
   mkdir tmp
   cd tmp
   git clone https://aur.archlinux.org/aura.git
