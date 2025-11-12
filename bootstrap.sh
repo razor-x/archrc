@@ -54,6 +54,8 @@ install_aura () (
 install_aconfmgr () {
   puts 'Installing' 'aconfmgr'
   aura -A --noconfirm aconfmgr-git
+  mkdir -p aconfmgr
+  aconfmgr --aur-helper aura --config aconfmgr
   puts 'Installed' 'aconfmgr'
 }
 
