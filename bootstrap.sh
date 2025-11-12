@@ -28,7 +28,7 @@ install_config () {
   puts 'Installed' 'Config Curator'
 
   puts 'Installing' 'Config'
-  npm start
+  ./node_modules/.bin/curator
   puts 'Installed' 'Config'
 }
 
