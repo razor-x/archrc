@@ -17,11 +17,14 @@ main () {
   npm ci
 
   if [[ "$cmd" = 'config' ]]; then
-    ./node_modules/.bin/curator
+    echo '$ curator'
+    sudo ./node_modules/.bin/curator
+    echo '$ aconfmgr save'
     aconfmgr --aur-helper aura --config aconfmgr save
     exit
   fi
 
+  echo '$ aconfmgr apply'
   aconfmgr --aur-helper aura --config aconfmgr apply
 }
 
