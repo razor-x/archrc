@@ -101,7 +101,7 @@ Mount the partitions
 
 ```
 # mount -m /dev/sda3 /mnt
-# mount -m /dev/nvme0n1p2 /mnt/boot
+# mount -m /dev/sda1 /mnt/boot
 # swapon /dev/sda2
 ```
 
