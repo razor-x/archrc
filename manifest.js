@@ -12,6 +12,12 @@ const defaults = {
 
 const files = [
   {
+    src: 'etc/locale.gen'
+  },
+  {
+    src: 'etc/locale.conf'
+  },
+  {
     src: 'etc/systemd/network/10-dhcp.network',
   },
   {
