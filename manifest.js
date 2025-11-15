@@ -7,19 +7,24 @@ const defaults = {
   dmode: '0755',
   fmode: '0644',
   user: 'root',
-  group: 'root'
+  group: 'root',
 }
 
-const files = [{
-  src: 'etc/sudoers',
-  fmode: '0440',
-  pkgs: ['sudo']
-}]
+const files = [
+  {
+    src: 'etc/systemd/network/10-dhcp.network',
+  },
+  {
+    src: 'etc/sudoers',
+    fmode: '0440',
+    pkgs: ['sudo'],
+  }
+]
 
 export default {
   files,
   targetRoot,
   ioType,
   pkgType,
-  defaults
+  defaults,
 }
