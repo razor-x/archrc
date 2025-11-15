@@ -19,6 +19,27 @@ My Arch Linux configuration managed with [Config Curator] and [aconfmgr].
 
 ## Installation and Usage
 
+Clone the repo
+
+```
+$ git clone git@github.com:razor-x/archrc.git
+```
+
+Install configuration first without adding or removing any packages
+
+```
+$ ./install.sh config
+```
+
+This will update `aconfmgr/99-unsorted.sh` with any new or removed packages.
+After incorporating these changes, install everything
+
+```
+$ ./install.sh
+```
+
+## Bootstrapping a new Arch Linux system
+
 ### First book into live environment
 
 #### Set the Hardware clock
