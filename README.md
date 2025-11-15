@@ -36,6 +36,44 @@ My Arch Linux configuration managed with [Config Curator] and [aconfmgr].
 # pacman -Syy
 ```
 
+## Inside arch-chroot
+
+### Set the root passwd
+
+```
+# passwd
+```
+
+### Install dependencies
+
+```
+# pacman-key --init
+# pacman-key --populate archlinux
+# pacman -S git inetutils
+```
+
+### Setup non-root user
+
+Clone this repo
+
+```
+# git clone https://github.com/razor-x/archrc.git /root/archrc
+```
+
+Manually install the `sudoers` file
+
+```
+# cp /root/archrc/etc/sudoers /etc/sudoers
+# rm -rf /root/archrc
+```
+
+```
+# useradd -m -G wheel razorx
+# passwd razorx
+```
+
+###
+
 ## License
 
 These configuration files are licensed under the MIT license.
