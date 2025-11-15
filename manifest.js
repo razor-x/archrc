@@ -1,3 +1,7 @@
+import os from 'os'
+
+const host = os.hostname().toLowerCase()
+
 const ioType = 'linux'
 const pkgType = 'pacman'
 
@@ -11,6 +15,10 @@ const defaults = {
 }
 
 const files = [
+  {
+    src: `etc/fstab.${host}`,
+    dst: 'etc/fstab'
+  },
   {
     src: 'etc/locale.gen'
   },
