@@ -10,8 +10,12 @@ AddPackage efivar # Tools and libraries to work with EFI variables
 AddPackage sudo # Give certain users the ability to run some commands as root
 
 if [ "$is_virtualbox" = true ]; then
-	AddPackage virtualbox-guest-utils # VirtualBox Guest userspace utilities
+  AddPackage virtualbox-guest-utils # VirtualBox Guest userspace utilities
 fi
+
+SystemdEnable systemd-networkd
+SystemdEnable systemd-resolved
+SystemdEnable sshd
 
 # Configuration
 

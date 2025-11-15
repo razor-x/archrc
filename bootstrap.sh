@@ -111,14 +111,6 @@ update_repo_remote () (
   puts 'Updated' 'Repo remote'
 )
 
-enable_networkd () (
-  puts 'Networking' 'Enable'
-  sudo -S systemctl enable systemd-networkd
-  sudo -S systemctl enable systemd-resolved
-  sudo -S systemctl enable sshd
-  puts 'Networking' 'Enabled'
-)
-
 main () {
   if [ "$(id -u)" -eq 0 ]; then
     echo 'Must not run as root.'
@@ -149,7 +141,6 @@ main () {
   generate_locale
   install_aura
   install_aconfmgr
-  enable_networkd
   update_repo_remote
 
   puts 'Bootstrapped' 'archrc'
