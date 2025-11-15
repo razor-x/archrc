@@ -92,7 +92,7 @@ Number  Start (sector)    End (sector)  Size       Code  Name
 Format the partitions
 
 ```
-# mkfs.vfat -F 32 -n efi /dev/sda1
+# mkfs.vfat -F 32 -n boot /dev/sda1
 # mkfs.ext4 -L root /dev/sda3
 # mkswap /dev/sda2
 ```
