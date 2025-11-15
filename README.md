@@ -162,7 +162,7 @@ For systems with wireless cards, ensure `iwctl` will be available on first boot
 Clone this repo
 
 ```
-# git clone https://github.com/razor-x/archrc.git /root
+# git clone https://github.com/razor-x/archrc.git /root/archrc
 ```
 
 Manually install the `sudoers` file
