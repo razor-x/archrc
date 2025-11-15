@@ -9,6 +9,13 @@ puts () {
   echo "-- [${2:-}] ${1:-}"
 }
 
+set_hostname () {
+  hostname="$(uname -n)"
+  puts 'Setting' 'Hostname'
+  echo "$hostname" | sudo -S tee /etc/hostname
+  puts 'Set' 'Hostname'
+}
+
 set_clock () {
   puts 'Setting' 'Hardware clock'
   sudo -S hwclock --systohc
@@ -115,6 +122,7 @@ main () {
   # Pre-authenticate for sudo.
   sudo -S echo
 
+  set_hostname
   set_clock
 
   copy_fstab
