@@ -56,7 +56,7 @@ install_aura () (
   temp_dir=$(mktemp -d)
   trap "rm -rf $temp_dir; exit" HUP INT TERM PIPE EXIT
   cd "$temp_dir"
-  sudo -S pacman -S --noconfirm git base-devel cargo
+  sudo -S pacman -S --noconfirm git cargo
   git clone https://aur.archlinux.org/aura.git
   cd aura
   makepkg -s
