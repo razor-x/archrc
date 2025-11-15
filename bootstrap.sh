@@ -42,7 +42,7 @@ generate_locale () {
 install_aura () (
   puts 'Installing' 'Aura'
   temp_dir=$(mktemp -d)
-  trap "rm -r $temp_dir; exit" HUP INT TERM PIPE EXIT
+  trap "rm -rf $temp_dir; exit" HUP INT TERM PIPE EXIT
   cd $temp_dir
   sudo -S pacman -S --noconfirm git base-devel cargo
   git clone https://aur.archlinux.org/aura.git
@@ -59,7 +59,7 @@ install_aconfmgr () (
   # aura -A --noconfirm aconfmgr-git
 
   temp_dir=$(mktemp -d)
-  trap "rm -r $temp_dir; exit" HUP INT TERM PIPE EXIT
+  trap "rm -rf $temp_dir; exit" HUP INT TERM PIPE EXIT
   cd $temp_dir
   git clone https://aur.archlinux.org/aconfmgr-git.git
   cd aconfmgr-git
