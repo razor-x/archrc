@@ -1,3 +1,5 @@
+# shellcheck disable=2154
+
 # Platform
 
 AddPackage base # Minimal package set to define a basic Arch Linux installation
