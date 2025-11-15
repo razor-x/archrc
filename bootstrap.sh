@@ -52,6 +52,16 @@ generate_locale () {
   puts 'Generated' 'Locale'
 }
 
+set_clock () {
+  puts 'Setting' 'Hardware clock'
+  sudo -S hwclock --systohc
+  puts 'Set' 'Hardware clock'
+
+  puts 'Setting' 'Time zone'
+  sudo -S ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
+  puts 'Set' 'Time zone'
+}
+
 install_aura () (
   puts 'Installing' 'Aura'
   temp_dir=$(mktemp -d)
@@ -104,6 +114,7 @@ main () {
   fi
 
   install_config
+  set_clock
   generate_locale
   install_aura
   install_aconfmgr
