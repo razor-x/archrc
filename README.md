@@ -7,11 +7,11 @@ My Arch Linux configuration managed with [Config Curator] and [aconfmgr].
 
 ## Requirements
 
+These requirements are handled automatically when bootstrapping a new system.
+
 * [Aura].
 * [aconfmgr].
 * [Node.js] with [npm].
-
-> These requirements are handled automatically when bootstrapping a new system.
 
 [Aura]: https://fosskers.github.io/aura/
 [Node.js]: https://nodejs.org/
