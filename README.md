@@ -114,7 +114,7 @@ Mount the partitions
 Set the hostname
 
 ```
-echo "<hostname>" > /etc/hostname
+echo "<hostname>" > /mnt/etc/hostname
 ```
 
 Save the fstab to the installed system
