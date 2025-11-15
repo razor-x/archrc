@@ -112,9 +112,10 @@ update_repo_remote () (
 )
 
 enable_networkd () (
-  puts 'systemd-networkd' 'Enable'
+  puts 'Networking' 'Enable'
   sudo -S systemctl enable systemd-networkd
-  puts 'systemd-networkd' 'Enabled'
+  sudo -S systemctl enable systemd-resolved
+  puts 'Networking' 'Enabled'
 )
 
 main () {
