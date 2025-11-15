@@ -74,7 +74,7 @@ install_config () {
   puts 'Installed' 'Config Curator'
 
   puts 'Installing' 'Config'
-  ./node_modules/.bin/curator
+  sudo -S ./node_modules/.bin/curator
   puts 'Installed' 'Config'
 }
 

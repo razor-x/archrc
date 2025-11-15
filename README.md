@@ -17,21 +17,16 @@ My Arch Linux configuration managed with [Config Curator] and [aconfmgr].
 [Node.js]: https://nodejs.org/
 [npm]: https://www.npmjs.com/
 
-## Installation and Usage
+## Maintaining an existing Arch Linux system
 
-Clone the repo
-
-```
-$ git clone git@github.com:razor-x/archrc.git
-```
-
-Install configuration first without adding or removing any packages
+Install configuration without adding or removing any packages
 
 ```
 $ ./install.sh config
 ```
 
 This will update `aconfmgr/99-unsorted.sh` with any new or removed packages.
+
 After incorporating these changes, install everything
 
 ```
@@ -40,8 +35,9 @@ $ ./install.sh
 
 ## Bootstrapping a new Arch Linux system
 
-Before starting, commit a new loader entry in `boot/loader/entries/arch.conf`,
-but leave the root `UUID=__UUID__` so the bootstrapping script
+Before starting, commit a new loader entry to
+`boot/loader/entries/arch.<hostname>.conf`.
+Leave a placeholder for the root partition UUID so the bootstrapping script
 can replace it later, e.g.,
 
 ```
@@ -51,12 +47,19 @@ initrd /initramfs-linux.img
 options root=UUID=__UUID__ rw
 ```
 
-### First book into live environment
+### First boot into live environment
 
 #### Set the Hardware clock
 
+Check that the time is synchronized with NTP
+
 ```
 # timedatectl
+```
+
+Set the hardware clock to UTC
+
+```
 # hwclock --systohc --utc
 ```
 
@@ -68,11 +71,29 @@ options root=UUID=__UUID__ rw
 # pacman -Syy
 ```
 
+### Prepare the partitions and file systems
+
+#### Virtualbox
+
 ### Install the base system
 
-TODO
+```
+# pacstrap -K /mnt base base-devel linux linux-firmware
+```
 
-### Inside arch-chroot
+Save the fstab to the installed system
+
+```
+# genfstab -U /mnt >> /mnt/etc/fstab
+```
+
+Enter arch-chroot
+
+```
+# arch-chroot /mnt
+```
+
+### Configure the installed system
 
 #### Set the root passwd
 
@@ -80,7 +101,7 @@ TODO
 # passwd
 ```
 
-#### Install dependencies
+#### Install bootstrapping dependencies
 
 ```
 # pacman-key --init
@@ -117,10 +138,10 @@ Manually install the `sudoers` file
 Switch to the new user
 
 ```
-# su -l not-root
+# su -l razorx
 ```
 
-#### Bootstrapping
+#### Bootstrap archrc
 
 Clone this repo
 
