@@ -66,7 +66,6 @@ Set the hardware clock to UTC
 #### Update the mirrorlist
 
 ```
-# pacman -S reflector
 # reflector -l 5 -c US -p https --sort rate --save /etc/pacman.d/mirrorlist
 # pacman -Syy
 ```
