@@ -75,6 +75,37 @@ Set the hardware clock to UTC
 
 #### Virtualbox
 
+Open gdisk
+
+```
+# gdisk /dev/sda
+```
+
+Setup a partition table similar to
+
+```
+Number  Start (sector)    End (sector)  Size       Code  Name
+   1            2048         4196351   2.0 GiB     EF00  EFI system partition
+   2         4196352        12584959   4.0 GiB     8200  Linux swap
+   3        12584960        61870079   23.5 GiB    8300  Linux filesystem
+```
+
+Format the partitions
+
+```
+# mkfs.vfat -F 32 -n efi /dev/sda1
+# mkfs.ext4 -L root /dev/sda3
+# mkswap /dev/sda2
+```
+
+Mount the partitions
+
+```
+# mount -m /dev/sda3 /mnt
+# mount -m /dev/nvme0n1p2 /mnt/boot
+# swapon /dev/sda2
+```
+
 ### Install the base system
 
 ```
@@ -91,6 +122,12 @@ Enter arch-chroot
 
 ```
 # arch-chroot /mnt
+```
+
+Install systemd-boot to the ESP
+
+```
+# bootctl install
 ```
 
 ### Configure the installed system
