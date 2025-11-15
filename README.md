@@ -131,18 +131,6 @@ Enter arch-chroot
 
 ### Configure the installed system
 
-#### Set the hostname
-
-```
-# hostname <hostname>
-```
-
-#### Set the root passwd
-
-```
-# passwd
-```
-
 #### Install bootstrapping dependencies
 
 ```
@@ -155,6 +143,18 @@ For systems with wireless cards, ensure `iwctl` will be available on first boot
 
 ```
 # pacman -S iwd
+```
+
+#### Set the hostname
+
+```
+# hostname <hostname>
+```
+
+#### Set the root passwd
+
+```
+# passwd
 ```
 
 #### Setup non-root user
