@@ -24,7 +24,11 @@ const files = [
     src: 'etc/sudoers',
     fmode: '0440',
     pkgs: ['sudo'],
-  }
+  },
+  {
+    src: 'etc/ssh/sshd_config',
+    pkgs: ['openssh']
+  },
 ]
 
 export default {
