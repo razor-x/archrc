@@ -6,7 +6,7 @@ set -u
 main () {
   cmd="${1:-config}"
 
-  if [[ $(id -u) == 0 ]]; then
+  if [ "$(id -u)" -eq 0 ]; then
     echo 'Must not run as root.'
     exit 1
   fi
@@ -16,7 +16,7 @@ main () {
 
   npm ci
 
-  if [[ "$cmd" = 'config' ]]; then
+  if [ "${cmd}" = 'config' ]; then
     echo '> curator'
     sudo ./node_modules/.bin/curator
     echo '> locale-gen'

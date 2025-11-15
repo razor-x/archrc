@@ -12,7 +12,7 @@ puts () {
 set_hostname () {
   hostname="${1:-}"
 
-  if [[ -z ${hostname} ]]; then
+  if [ -z "${hostname}" ]; then
     echo 'Must give hostname as first argument.'
     exit 2
   fi
@@ -55,8 +55,15 @@ generate_locale () {
 }
 
 generate_ssh_key () {
+  privkey="${1:-}"
+
+  if [ -z "${privkey}" ]; then
+    echo 'Output path for SSH private key was empty'
+    exit 3
+  fi
+
   puts 'Generating' 'SSH key'
-  ssh-keygen -C "$(whoami)@$(uname -n)-$(date -I)"
+  ssh-keygen -t ed25519 -f "$privkey" -N "" -C "$(whoami)@$(uname -n)-$(date -I)"
   puts 'Generated' 'SSH key'
 }
 
@@ -105,7 +112,7 @@ install_aconfmgr () (
 )
 
 main () {
-  if [[ $(id -u) == 0 ]]; then
+  if [ "$(id -u)" -eq 0 ]; then
     echo 'Must not run as root.'
     exit 1
   fi
@@ -121,10 +128,11 @@ main () {
   copy_fstab
   patch_loader_entry
 
-  if ls $HOME/.ssh/*.pub 1>/dev/null 2>&1; then
+  privkey="$HOME/.ssh/id_ed25519"
+  if [ -f "$privkey" ]; then
     puts 'Skipping' 'SSH key generation'
   else
-    generate_ssh_key
+    generate_ssh_key $privkey
   fi
 
   sudo pacman -Syy
