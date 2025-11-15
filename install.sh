@@ -11,20 +11,20 @@ main () {
     exit 1
   fi
 
-  echo 'Pre-authenticate for sudo.'
+  echo '> Pre-authenticate for sudo.'
   sudo -S echo
 
   npm ci
 
   if [[ "$cmd" = 'config' ]]; then
-    echo '$ curator'
+    echo '> curator'
     sudo ./node_modules/.bin/curator
-    echo '$ aconfmgr save'
+    echo '> aconfmgr save'
     aconfmgr --aur-helper aura --config aconfmgr save
     exit
   fi
 
-  echo '$ aconfmgr apply'
+  echo '> aconfmgr apply'
   aconfmgr --aur-helper aura --config aconfmgr apply
 }
 
