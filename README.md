@@ -53,7 +53,7 @@ TODO
 ```
 # pacman-key --init
 # pacman-key --populate archlinux
-# pacman -S git inetutils
+# pacman -S git inetutils openssh
 ```
 
 #### Setup non-root user
