@@ -120,10 +120,10 @@ Save the fstab to the installed system
 Enter arch-chroot
 
 ```
-# arch-chroot /mnt
+# arch-chroot -S /mnt
 ```
 
-Install systemd-boot to the ESP
+The `-S` option is required to install systemd-boot to the ESP
 
 ```
 # bootctl install
