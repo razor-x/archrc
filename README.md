@@ -36,15 +36,19 @@ My Arch Linux configuration managed with [Config Curator] and [aconfmgr].
 # pacman -Syy
 ```
 
-## Inside arch-chroot
+### Install the base system
 
-### Set the root passwd
+TODO
+
+### Inside arch-chroot
+
+#### Set the root passwd
 
 ```
 # passwd
 ```
 
-### Install dependencies
+#### Install dependencies
 
 ```
 # pacman-key --init
@@ -52,7 +56,7 @@ My Arch Linux configuration managed with [Config Curator] and [aconfmgr].
 # pacman -S git inetutils
 ```
 
-### Setup non-root user
+#### Setup non-root user
 
 Clone this repo
 
@@ -72,7 +76,15 @@ Manually install the `sudoers` file
 # passwd razorx
 ```
 
-###
+Switch to the new user
+
+```
+# su -l not-root
+```
+
+#### Bootstrap the system
+
+TODO
 
 ## License
 
