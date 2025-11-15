@@ -9,19 +9,6 @@ puts () {
   echo "-- [${2:-}] ${1:-}"
 }
 
-set_hostname () {
-  hostname="${1:-}"
-
-  if [ -z "${hostname}" ]; then
-    echo 'Must give hostname as first argument.'
-    exit 2
-  fi
-
-  puts 'Setting' 'Hostname'
-  echo "$hostname" | sudo -S tee /etc/hostname
-  puts 'Set' 'Hostname'
-}
-
 set_clock () {
   puts 'Setting' 'Hardware clock'
   sudo -S hwclock --systohc
@@ -128,7 +115,6 @@ main () {
   # Pre-authenticate for sudo.
   sudo -S echo
 
-  set_hostname "${1:-}"
   set_clock
 
   copy_fstab

@@ -111,22 +111,28 @@ Mount the partitions
 # pacstrap -K /mnt base base-devel linux linux-firmware
 ```
 
+Set the hostname
+
+```
+echo "<hostname>" > /etc/hostname
+```
+
 Save the fstab to the installed system
 
 ```
 # genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
+Install systemd-boot to the ESP
+
+```
+# arch-chroot -S /mnt bootctl install
+```
+
 Enter arch-chroot
 
 ```
-# arch-chroot -S /mnt
-```
-
-The `-S` option is required to install systemd-boot to the ESP
-
-```
-# bootctl install
+# arch-chroot /mnt
 ```
 
 ### Configure the installed system
@@ -188,10 +194,10 @@ $ git clone https://github.com/razor-x/archrc.git
 $ cd archrc
 ```
 
-Bootstrap the dependencies for archrc by passing in the hostname of the new system
+Bootstrap the dependencies for archrc
 
 ```
-./bootstrap.sh <hostname>
+./bootstrap.sh
 ```
 
 Install configuration and packages
