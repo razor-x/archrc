@@ -188,10 +188,10 @@ $ git clone https://github.com/razor-x/archrc.git
 $ cd archrc
 ```
 
-Bootstrap the dependencies for archrc
+Bootstrap the dependencies for archrc by passing in the hostname of the new system
 
 ```
-./bootstrap.sh
+./bootstrap.sh <hostname>
 ```
 
 Install configuration and packages
