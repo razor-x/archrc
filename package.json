@@ -1,9 +1,6 @@
 {
   "type": "module",
   "private": true,
-  "scripts": {
-    "start": "sudo curator"
-  },
   "dependencies": {
     "config-curator": "^2.0.0"
   }

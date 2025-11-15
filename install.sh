@@ -14,9 +14,11 @@ main () {
   echo 'Pre-authenticate for sudo.'
   sudo -S echo
 
+  npm ci
+
   if [[ "$cmd" = 'config' ]]; then
-    npm start
-    aconfmgr --aur-helper aura --config aconfmgr apply
+    ./node_modules/.bin/curator
+    aconfmgr --aur-helper aura --config aconfmgr save
     exit
   fi
 
