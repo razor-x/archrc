@@ -41,16 +41,14 @@ generate_locale () {
 
 install_aura () (
   puts 'Installing' 'Aura'
+  temp_dir=$(mktemp -d)
+  trap "rm -r $temp_dir; exit" HUP INT TERM PIPE EXIT
+  cd $temp_dir
   sudo -S pacman -S --noconfirm git base-devel cargo
-  mkdir tmp
-  cd tmp
   git clone https://aur.archlinux.org/aura.git
   cd aura
   makepkg -s
   sudo pacman -U --noconfirm ./aura-*.pkg.tar.zst
-  cd ..
-  cd ..
-  rm -rf tmp
   puts 'Installed' 'Aura'
 )
 
@@ -60,16 +58,14 @@ install_aconfmgr () (
   # UPSTREAM: Need aura support
   # aura -A --noconfirm aconfmgr-git
 
-  mkdir tmp
-  cd tmp
+  temp_dir=$(mktemp -d)
+  trap "rm -r $temp_dir; exit" HUP INT TERM PIPE EXIT
+  cd $temp_dir
   git clone https://aur.archlinux.org/aconfmgr-git.git
   cd aconfmgr-git
   sed -i 's|CyberShadow/aconfmgr|rxfork/aconfmgr#branch=aura-aur-helper|g' PKGBUILD
   makepkg -s
   sudo pacman -U --noconfirm ./aconfmgr-git-*.pkg.tar.zst
-  cd ..
-  cd ..
-  rm -rf tmp
 
   mkdir -p aconfmgr
   aconfmgr --aur-helper aura --config aconfmgr check
@@ -84,9 +80,6 @@ main () {
 
   echo 'Pre-authenticate for sudo.'
   sudo -S echo
-
-  rm -rf node_modules
-  rm -rf tmp
 
   set_hostname ${1:-}
   install_config
