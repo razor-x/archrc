@@ -32,10 +32,17 @@ set_clock () {
   puts 'Set' 'Time zone'
 }
 
+patch_loader_entry () {
+  puts 'Patch' 'Arch loader entry'
+  root_uuid="$(genfstab -U / | grep -oP 'UUID=\K\S+(?=\s+/\s)')"
+  sed -i "s/__UUID__/$root_uuid/g" "{boot/loader/entries/arch.$(uname -n).conf,,}"
+  puts 'Patched' 'Arch loader entry'
+}
+
 copy_fstab () {
-  puts 'Copy' 'fstab'
-  cp /etc/fstab "etc/fstab.$(uname -n)"
-  puts 'Copied' 'fstab'
+  puts 'Save' 'fstab'
+  cp /etc/fstab "{etc/fstab.$(uname -n),,}"
+  puts 'Saved' 'fstab'
 }
 
 generate_locale () {
@@ -101,13 +108,16 @@ main () {
     exit 1
   fi
 
-  echo 'Pre-authenticate for sudo.'
+  puts 'Bootstrapping' 'archrc'
+
+  # Pre-authenticate for sudo.
   sudo -S echo
 
   set_hostname "${1:-}"
   set_clock
 
   copy_fstab
+  patch_loader_entry
 
   if [ ! -d "$HOME/.ssh" ]; then
     generate_ssh_key
@@ -119,7 +129,7 @@ main () {
   generate_locale
   install_aura
   install_aconfmgr
-  puts 'Done' ''
+  puts 'Bootstrapped' 'archrc'
 }
 
 main "${1:-}"

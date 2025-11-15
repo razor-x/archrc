@@ -22,11 +22,10 @@ const files = [
   },
   {
     src: 'boot/loader/loader.conf',
-    dst: 'boot/loader/entries/arch.conf',
     hosts: ['minto'],
   },
   {
-    src: `boot/loader/entries/arch.conf.${host}`,
+    src: `boot/loader/entries/arch.${host}.conf`,
     dst: 'boot/loader/entries/arch.conf',
     hosts: ['minto'],
   },

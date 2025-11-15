@@ -40,6 +40,17 @@ $ ./install.sh
 
 ## Bootstrapping a new Arch Linux system
 
+Before starting, commit a new loader entry in `boot/loader/entries/arch.conf`,
+but leave the root `UUID=__UUID__` so the bootstrapping script
+can replace it later, e.g.,
+
+```
+title Arch Linux
+linux /vmlinuz-linux
+initrd /initramfs-linux.img
+options root=UUID=__UUID__ rw
+```
+
 ### First book into live environment
 
 #### Set the Hardware clock
