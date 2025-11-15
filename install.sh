@@ -19,6 +19,8 @@ main () {
   if [[ "$cmd" = 'config' ]]; then
     echo '> curator'
     sudo ./node_modules/.bin/curator
+    echo '> locale-gen'
+    sudo locale-gen
     echo '> aconfmgr save'
     aconfmgr --aur-helper aura --config aconfmgr save
     exit

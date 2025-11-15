@@ -22,6 +22,18 @@ set_hostname () {
   puts 'Hostname' "$hostname"
 }
 
+copy_fstab () {
+  puts 'Copy' 'fstab'
+  cp /etc/fstab "etc/fstab.$(uname -n)"
+  puts 'Copied' 'fstab'
+}
+
+generate_ssh_key () {
+  puts 'Generating' 'SSH key'
+  ssh-keygen -C "$(whoami)@$(uname -n)-$(date -I)"
+  puts 'Generated' 'SSH key'
+}
+
 install_config () {
   puts 'Installing' 'Config Curator'
   sudo -S pacman -S --noconfirm rsync nodejs npm
@@ -85,6 +97,8 @@ main () {
   sudo pacman -Syy
 
   set_hostname "${1:-}"
+  copy_fstab
+  generate_ssh_key
   install_config
   generate_locale
   install_aura

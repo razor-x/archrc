@@ -109,9 +109,28 @@ Switch to the new user
 # su -l not-root
 ```
 
-#### Bootstrap the system
+#### Bootstrapping
 
-TODO
+Clone this repo
+
+```
+$ mkdir ~/config
+$ cd ~/config
+$ git clone git@github.com:razor-x/archrc.git
+$ cd archrc
+```
+
+Bootstrap the dependencies for archrc
+
+```
+./bootstrap.sh
+```
+
+Install configuration and packages
+
+```
+./install.sh
+```
 
 ## License
 
