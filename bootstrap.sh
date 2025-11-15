@@ -111,6 +111,12 @@ install_aconfmgr () (
   puts 'Installed' 'aconfmgr'
 )
 
+update_repo_remote () (
+  puts 'Update' 'Repo remote'
+  git remote set-url origin 'git@github.com:razor-x/archrc.git'
+  puts 'Updated' 'Repo remote'
+)
+
 main () {
   if [ "$(id -u)" -eq 0 ]; then
     echo 'Must not run as root.'
@@ -141,6 +147,7 @@ main () {
   generate_locale
   install_aura
   install_aconfmgr
+  update_repo_remote
   puts 'Bootstrapped' 'archrc'
 }
 

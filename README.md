@@ -148,7 +148,7 @@ Clone this repo
 ```
 $ mkdir ~/config
 $ cd ~/config
-$ git clone git@github.com:razor-x/archrc.git
+$ git clone https://github.com/razor-x/archrc.git
 $ cd archrc
 ```
 
