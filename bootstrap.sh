@@ -115,6 +115,7 @@ enable_networkd () (
   puts 'Networking' 'Enable'
   sudo -S systemctl enable systemd-networkd
   sudo -S systemctl enable systemd-resolved
+  sudo -S systemctl enable sshd
   puts 'Networking' 'Enabled'
 )
 
