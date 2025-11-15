@@ -77,6 +77,12 @@ TODO
 # pacman -S git inetutils openssh
 ```
 
+For systems with wireless cards, ensure `iwctl` will be available on first boot
+
+```
+# pacman -S iwd
+```
+
 #### Setup non-root user
 
 Clone this repo
