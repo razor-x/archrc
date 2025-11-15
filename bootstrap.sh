@@ -16,9 +16,9 @@ set_hostname () {
   fi
 
   puts 'Setting' 'Hostname'
-  echo $hostname | sudo -S tee /etc/hostname
-  sudo -S hostnamectl hostname $hostname
-  puts 'Hostname' $hostname
+  echo "$hostname" | sudo -S tee /etc/hostname
+  sudo -S hostnamectl hostname "$hostname"
+  puts 'Hostname' "$hostname"
 }
 
 install_config () {
@@ -35,7 +35,7 @@ install_config () {
 generate_locale () {
   puts 'Generating' 'Locale'
   sudo -S locale-gen
-  export $(cat /etc/locale.conf)
+  export "$(cat /etc/locale.conf)"
   puts 'Generated' 'Locale'
 }
 
@@ -43,7 +43,7 @@ install_aura () (
   puts 'Installing' 'Aura'
   temp_dir=$(mktemp -d)
   trap "rm -rf $temp_dir; exit" HUP INT TERM PIPE EXIT
-  cd $temp_dir
+  cd "$temp_dir"
   sudo -S pacman -S --noconfirm git base-devel cargo
   git clone https://aur.archlinux.org/aura.git
   cd aura
@@ -60,7 +60,7 @@ install_aconfmgr () (
 
   temp_dir=$(mktemp -d)
   trap "rm -rf $temp_dir; exit" HUP INT TERM PIPE EXIT
-  cd $temp_dir
+  cd "$temp_dir"
   git clone https://aur.archlinux.org/aconfmgr-git.git
   cd aconfmgr-git
   sed -i 's|CyberShadow/aconfmgr|rxfork/aconfmgr#branch=aura-aur-helper|g' PKGBUILD
@@ -83,7 +83,7 @@ main () {
 
   sudo pacman -Syy
 
-  set_hostname ${1:-}
+  set_hostname "${1:-}"
   install_config
   generate_locale
   install_aura
@@ -91,5 +91,5 @@ main () {
   puts 'Done' ''
 }
 
-main ${1:-}
+main "${1:-}"
 exit
