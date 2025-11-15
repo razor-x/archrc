@@ -22,12 +22,12 @@ main () {
     echo '> locale-gen'
     sudo locale-gen
     echo '> aconfmgr save'
-    aconfmgr --aur-helper aura --config aconfmgr --yes save
+    aconfmgr --aur-helper aura --config aconfmgr save
     exit
   fi
 
   echo '> aconfmgr apply'
-  aconfmgr --aur-helper aura --config aconfmgr --yes apply
+  aconfmgr --aur-helper aura --config aconfmgr apply
 }
 
 main "${1:-}"
