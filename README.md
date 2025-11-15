@@ -210,7 +210,9 @@ Reinstall linux to ensure all kernal modules are ready for first boot
 
 ```
 $ sudo pacman -S linux
-$ sudo reboot
+$ exit
+# exit
+# sudo reboot
 ```
 
 ## License
