@@ -17,13 +17,24 @@ const defaults = {
 const files = [
   {
     src: `etc/fstab.${host}`,
-    dst: 'etc/fstab'
+    dst: 'etc/fstab',
+    hosts: ['minto'],
   },
   {
-    src: 'etc/locale.gen'
+    src: 'boot/loader/loader.conf',
+    dst: 'boot/loader/entries/arch.conf',
+    hosts: ['minto'],
   },
   {
-    src: 'etc/locale.conf'
+    src: `boot/loader/entries/arch.conf.${host}`,
+    dst: 'boot/loader/entries/arch.conf',
+    hosts: ['minto'],
+  },
+  {
+    src: 'etc/locale.gen',
+  },
+  {
+    src: 'etc/locale.conf',
   },
   {
     src: 'etc/systemd/network/10-dhcp.network',
@@ -35,7 +46,7 @@ const files = [
   },
   {
     src: 'etc/ssh/sshd_config',
-    pkgs: ['openssh']
+    pkgs: ['openssh'],
   },
 ]
 
