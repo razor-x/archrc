@@ -98,7 +98,11 @@ main () {
 
   set_hostname "${1:-}"
   copy_fstab
-  generate_ssh_key
+
+  if [ ! -d "$HOME/.ssh" ]; then
+    generate_ssh_key
+  fi
+
   install_config
   generate_locale
   install_aura
