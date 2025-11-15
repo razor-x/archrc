@@ -81,6 +81,8 @@ main () {
   echo 'Pre-authenticate for sudo.'
   sudo -S echo
 
+  sudo pacman -Syy
+
   set_hostname ${1:-}
   install_config
   generate_locale
