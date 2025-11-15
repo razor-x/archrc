@@ -111,12 +111,6 @@ Mount the partitions
 # pacstrap -K /mnt base base-devel linux linux-firmware
 ```
 
-Set the hostname
-
-```
-echo "<hostname>" > /mnt/etc/hostname
-```
-
 Save the fstab to the installed system
 
 ```
@@ -136,6 +130,12 @@ Enter arch-chroot
 ```
 
 ### Configure the installed system
+
+#### Set the hostname
+
+```
+# hostname <hostname>
+```
 
 #### Set the root passwd
 
