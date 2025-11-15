@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# shellcheck disable=SC2064
+# shellcheck disable=SC2064,SC2086
 
 set -e
 set -u
@@ -19,7 +19,7 @@ set_hostname () {
 
   puts 'Setting' 'Hostname'
   sudo -S hostnamectl hostname "$hostname"
-  puts 'Hostname' "$hostname"
+  puts 'Set' 'Hostname'
 }
 
 set_clock () {
@@ -32,17 +32,17 @@ set_clock () {
   puts 'Set' 'Time zone'
 }
 
+copy_fstab () {
+  puts 'Save' 'fstab'
+  cp /etc/fstab "{etc/fstab.$(uname -n),,}"
+  puts 'Saved' 'fstab'
+}
+
 patch_loader_entry () {
   puts 'Patch' 'Arch loader entry'
   root_uuid="$(genfstab -U / | grep -oP 'UUID=\K\S+(?=\s+/\s)')"
   sed -i "s/__UUID__/$root_uuid/g" "{boot/loader/entries/arch.$(uname -n).conf,,}"
   puts 'Patched' 'Arch loader entry'
-}
-
-copy_fstab () {
-  puts 'Save' 'fstab'
-  cp /etc/fstab "{etc/fstab.$(uname -n),,}"
-  puts 'Saved' 'fstab'
 }
 
 generate_locale () {
@@ -56,6 +56,17 @@ generate_ssh_key () {
   puts 'Generating' 'SSH key'
   ssh-keygen -C "$(whoami)@$(uname -n)-$(date -I)"
   puts 'Generated' 'SSH key'
+}
+
+install_config () {
+  puts 'Installing' 'Config Curator'
+  sudo -S pacman -S --noconfirm rsync nodejs npm
+  npm ci
+  puts 'Installed' 'Config Curator'
+
+  puts 'Installing' 'Config'
+  ./node_modules/.bin/curator
+  puts 'Installed' 'Config'
 }
 
 install_aura () (
@@ -91,17 +102,6 @@ install_aconfmgr () (
   puts 'Installed' 'aconfmgr'
 )
 
-install_config () {
-  puts 'Installing' 'Config Curator'
-  sudo -S pacman -S --noconfirm rsync nodejs npm
-  npm ci
-  puts 'Installed' 'Config Curator'
-
-  puts 'Installing' 'Config'
-  ./node_modules/.bin/curator
-  puts 'Installed' 'Config'
-}
-
 main () {
   if [[ $(id -u) == 0 ]]; then
     echo 'Must not run as root.'
@@ -119,7 +119,9 @@ main () {
   copy_fstab
   patch_loader_entry
 
-  if [ ! -d "$HOME/.ssh" ]; then
+  if ls $HOME/.ssh/*.pub 1>/dev/null 2>&1; then
+    puts 'Skipping' 'SSH key generation'
+  else
     generate_ssh_key
   fi
 
