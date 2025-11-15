@@ -200,6 +200,13 @@ Install configuration and packages
 ./install.sh
 ```
 
+Reinstall linux to ensure all kernal modules are ready for first boot
+
+```
+$ sudo pacman -S linux
+$ sudo reboot
+```
+
 ## License
 
 These configuration files are licensed under the MIT license.
