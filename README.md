@@ -1,9 +1,6 @@
 # Arch Linux Configuration
 
-My Arch Linux configuration managed with [Config Curator] and [aconfmgr].
-
-[aconfmgr]: https://github.com/CyberShadow/aconfmgr
-[Config Curator]: https://github.com/razor-x/config-curator
+My Arch Linux configuration managed with [aconfmgr].
 
 ## Requirements
 
@@ -11,26 +8,24 @@ These requirements are handled automatically when bootstrapping a new system.
 
 * [Aura].
 * [aconfmgr].
-* [Node.js] with [npm].
 
 [Aura]: https://fosskers.github.io/aura/
-[Node.js]: https://nodejs.org/
-[npm]: https://www.npmjs.com/
+[aconfmgr]: https://github.com/CyberShadow/aconfmgr
 
 ## Maintaining an existing Arch Linux system
 
-Install configuration without adding or removing any packages
+Save any configuration
 
 ```
-$ ./install.sh config
+$ ./save.sh
 ```
 
-This will update `aconfmgr/99-unsorted.sh` with any new or removed packages.
+This will update `config/99-unsorted.sh` with any new or removed packages.
 
-After incorporating these changes, install everything
+After incorporating these changes, apply everything
 
 ```
-$ ./install.sh
+$ ./apply.sh
 ```
 
 ## Bootstrapping a new Arch Linux system
@@ -203,7 +198,7 @@ Bootstrap the dependencies for archrc
 Install configuration and packages
 
 ```
-./install.sh
+./apply.sh
 ```
 
 Reinstall linux to ensure all kernal modules are ready for first boot
