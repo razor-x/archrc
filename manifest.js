@@ -18,16 +18,13 @@ const files = [
   {
     src: `etc/fstab.${host}`,
     dst: 'etc/fstab',
-    hosts: ['minto'],
   },
   {
     src: 'boot/loader/loader.conf',
-    hosts: ['minto'],
   },
   {
     src: `boot/loader/entries/arch.${host}.conf`,
     dst: 'boot/loader/entries/arch.conf',
-    hosts: ['minto'],
   },
   {
     src: 'etc/locale.gen',
