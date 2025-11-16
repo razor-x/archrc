@@ -16,15 +16,23 @@ main () {
 
   npm ci
 
-  if [ "${cmd}" = 'config' ]; then
     echo '> curator'
     sudo ./node_modules/.bin/curator
     echo '> locale-gen'
     sudo locale-gen
+
+  if [ "${cmd}" = 'config' ]; then
     echo '> aconfmgr save'
     aconfmgr --aur-helper aura --config aconfmgr save
+
     exit
   fi
+
+  echo '> aconfmgr apply'
+  aconfmgr --aur-helper aura --config aconfmgr apply
+
+  echo '> curator'
+  sudo ./node_modules/.bin/curator
 
   echo '> aconfmgr apply'
   aconfmgr --aur-helper aura --config aconfmgr apply
