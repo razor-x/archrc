@@ -32,3 +32,13 @@ AddPackage openssh # SSH protocol implementation for remote login, command execu
 # Tools
 
 AddPackage inetutils # A collection of common network programs
+
+CopyFileTo /boot/loader/entries/arch.$hostname.conf /boot/loader/entries/arch.conf 755
+CopyFile /boot/loader/loader.conf 755
+CopyFileTo /etc/fstab.$hostname /etc/fstab
+CopyFile /etc/locale.conf
+CopyFile /etc/locale.gen
+CopyFile /etc/ssh/sshd_config
+CopyFile /etc/sudoers
+CopyFile /etc/systemd/network/10-dhcp.network
+CopyFile /etc/vconsole.conf
