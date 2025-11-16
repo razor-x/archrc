@@ -11,31 +11,21 @@ main () {
     exit 1
   fi
 
-  echo '> Pre-authenticate for sudo.'
-  sudo -S echo
-
-  npm ci
-
-  echo '> curator'
-  sudo ./node_modules/.bin/curator
-  echo '> locale-gen'
-  sudo locale-gen
-
   if [ "${cmd}" = 'config' ]; then
     echo '> aconfmgr save'
     aconfmgr --aur-helper aura --config aconfmgr save
-
     exit
   fi
 
   echo '> aconfmgr apply'
   aconfmgr --aur-helper aura --config aconfmgr apply
 
-  echo '> curator'
-  sudo ./node_modules/.bin/curator
-
+  # Apply again to ensure units installed by new packages are enabled.
   echo '> aconfmgr apply'
   aconfmgr --aur-helper aura --config aconfmgr apply
+
+  echo '> locale-gen'
+  sudo locale-gen
 }
 
 main "${1:-}"
