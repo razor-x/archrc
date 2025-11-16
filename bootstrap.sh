@@ -43,8 +43,8 @@ patch_loader_entry () {
 
 generate_locale () {
   puts 'Generating' 'Locale'
-  sudo -S cp aconfmgr/files/etc/locale.conf /etc/locale.conf
-  sudo -S cp aconfmgr/files/etc/locale.gen /etc/locale.gen
+  sudo -S cp config/files/etc/locale.conf /etc/locale.conf
+  sudo -S cp config/files/etc/locale.gen /etc/locale.gen
   sudo -S locale-gen
   export "$(cat /etc/locale.conf)"
   puts 'Generated' 'Locale'
@@ -92,7 +92,7 @@ install_aconfmgr () (
   sudo pacman -U --noconfirm ./aconfmgr-git-*.pkg.tar.zst
 
   mkdir -p aconfmgr
-  aconfmgr --aur-helper aura --config aconfmgr check
+  aconfmgr --aur-helper aura --config config check
   puts 'Installed' 'aconfmgr'
 )
 

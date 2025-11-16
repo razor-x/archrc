@@ -15,16 +15,16 @@ main () {
 
   if [ "${cmd}" = 'config' ]; then
     echo '> aconfmgr save'
-    aconfmgr --aur-helper aura --config aconfmgr save
+    aconfmgr --aur-helper aura --config config save
     exit
   fi
 
   echo '> aconfmgr apply'
-  aconfmgr --aur-helper aura --config aconfmgr apply
+  aconfmgr --aur-helper aura --config config apply
 
   # Apply again to ensure units installed by new packages are enabled.
   echo '> aconfmgr apply'
-  aconfmgr --aur-helper aura --config aconfmgr apply
+  aconfmgr --aur-helper aura --config config apply
 
   echo '> locale-gen'
   sudo locale-gen
