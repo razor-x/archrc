@@ -80,6 +80,8 @@ install_aconfmgr () (
   puts 'Installing' 'aconfmgr'
 
   # UPSTREAM: Need aura support
+  # https://github.com/CyberShadow/aconfmgr/pull/228
+  #
   # aura -A --noconfirm aconfmgr-git
 
   temp_dir=$(mktemp -d)
