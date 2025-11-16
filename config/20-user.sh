@@ -1,5 +1,6 @@
 # Core
 
+AddPackage chezmoi # Manage your dotfiles across multiple machines
 AddPackage git # the fast distributed version control system
 AddPackage rsync # A fast and versatile file copying tool for remote and local files
 AddPackage neovim # Fork of Vim aiming to improve user experience, plugins, and GUIs
