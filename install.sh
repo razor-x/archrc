@@ -11,6 +11,8 @@ main () {
     exit 1
   fi
 
+  sudo -S echo
+
   if [ "${cmd}" = 'config' ]; then
     echo '> aconfmgr save'
     aconfmgr --aur-helper aura --config aconfmgr save
