@@ -126,6 +126,7 @@ main () {
   if [ -f "$privkey" ]; then
     puts 'Skipping' 'SSH key generation'
   else
+    sudo pacman -S --noconfirm git openssh
     generate_ssh_key $privkey
   fi
 
