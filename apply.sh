@@ -13,7 +13,7 @@ main () {
 
   echo '==== AUTHENTICATING FOR archrc ./apply.sh ===='
   echo 'Authentication is required to apply configuration.'
-  echo 'Authenticating as: $(whoami)'
+  echo "Authenticating as: $(whoami)"
   sudo -S echo
   echo '==== AUTHENTICATING COMPLETE ===='
 

@@ -13,7 +13,7 @@ main () {
 
   echo '==== AUTHENTICATING FOR archrc ./save.sh ===='
   echo 'Authentication is required to save configuration.'
-  echo 'Authenticating as: $(whoami)'
+  echo "Authenticating as: $(whoami)"
   sudo -S echo
   echo '==== AUTHENTICATING COMPLETE ===='
 

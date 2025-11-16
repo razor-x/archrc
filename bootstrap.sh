@@ -110,7 +110,7 @@ main () {
 
   echo '==== AUTHENTICATING FOR archrc ./bootstrap.sh ===='
   echo 'Authentication is required to bootstrap configuration.'
-  echo 'Authenticating as: $(whoami)'
+  echo "Authenticating as: $(whoami)"
   sudo -S echo
   echo '==== AUTHENTICATING COMPLETE ===='
 
