@@ -26,4 +26,9 @@ AddPackage --foreign aura # A package manager for Arch Linux and its AUR
 AddPackage --foreign aura-debug # Detached debugging symbols for aura
 
 # Services
+
 AddPackage openssh # SSH protocol implementation for remote login, command execution and file transfer
+
+# Tools
+
+AddPackage inetutils # A collection of common network programs
