@@ -43,6 +43,8 @@ patch_loader_entry () {
 
 generate_locale () {
   puts 'Generating' 'Locale'
+  sudo -S cp aconfmgr/files/etc/locale.conf /etc/locale.conf
+  sudo -S cp aconfmgr/files/etc/locale.gen /etc/locale.gen
   sudo -S locale-gen
   export "$(cat /etc/locale.conf)"
   puts 'Generated' 'Locale'
@@ -59,17 +61,6 @@ generate_ssh_key () {
   puts 'Generating' 'SSH key'
   ssh-keygen -t ed25519 -f "$privkey" -N "" -C "$(whoami)@$(uname -n)-$(date -I)"
   puts 'Generated' 'SSH key'
-}
-
-install_config () {
-  puts 'Installing' 'Config Curator'
-  sudo -S pacman -S --noconfirm rsync nodejs npm
-  npm ci
-  puts 'Installed' 'Config Curator'
-
-  puts 'Installing' 'Config'
-  sudo -S ./node_modules/.bin/curator
-  puts 'Installed' 'Config'
 }
 
 install_aura () (
@@ -137,7 +128,6 @@ main () {
 
   sudo pacman -Syy
 
-  install_config
   generate_locale
   install_aura
   install_aconfmgr
