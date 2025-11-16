@@ -16,10 +16,10 @@ main () {
 
   npm ci
 
-    echo '> curator'
-    sudo ./node_modules/.bin/curator
-    echo '> locale-gen'
-    sudo locale-gen
+  echo '> curator'
+  sudo ./node_modules/.bin/curator
+  echo '> locale-gen'
+  sudo locale-gen
 
   if [ "${cmd}" = 'config' ]; then
     echo '> aconfmgr save'
