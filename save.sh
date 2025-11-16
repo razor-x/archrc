@@ -14,7 +14,7 @@ main () {
   echo '==== AUTHENTICATING FOR archrc ./save.sh ===='
   echo 'Authentication is required to save configuration.'
   echo "Authenticating as: $(whoami)"
-  sudo -S echo
+  sudo echo
   echo '==== AUTHENTICATING COMPLETE ===='
 
   aconfmgr --aur-helper aura --config config save

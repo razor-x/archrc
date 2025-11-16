@@ -12,17 +12,17 @@ puts () {
 set_hostname () {
   hostname="$(uname -n)"
   puts 'Setting' 'Hostname'
-  echo "$hostname" | sudo -S tee /etc/hostname
+  echo "$hostname" | sudo tee /etc/hostname
   puts 'Set' 'Hostname'
 }
 
 set_clock () {
   puts 'Setting' 'Hardware clock'
-  sudo -S hwclock --systohc
+  sudo hwclock --systohc
   puts 'Set' 'Hardware clock'
 
   puts 'Setting' 'Time zone'
-  sudo -S ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
+  sudo ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
   puts 'Set' 'Time zone'
 }
 
@@ -43,9 +43,9 @@ patch_loader_entry () {
 
 generate_locale () {
   puts 'Generating' 'Locale'
-  sudo -S cp config/files/etc/locale.conf /etc/locale.conf
-  sudo -S cp config/files/etc/locale.gen /etc/locale.gen
-  sudo -S locale-gen
+  sudo cp config/files/etc/locale.conf /etc/locale.conf
+  sudo cp config/files/etc/locale.gen /etc/locale.gen
+  sudo locale-gen
   export "$(cat /etc/locale.conf)"
   puts 'Generated' 'Locale'
 }
@@ -68,7 +68,7 @@ install_aura () (
   temp_dir=$(mktemp -d)
   trap "rm -rf $temp_dir; exit" HUP INT TERM PIPE EXIT
   cd "$temp_dir"
-  sudo -S pacman -S --noconfirm git cargo
+  sudo pacman -S --noconfirm git cargo
   git clone https://aur.archlinux.org/aura.git
   cd aura
   makepkg -s
@@ -111,7 +111,7 @@ main () {
   echo '==== AUTHENTICATING FOR archrc ./bootstrap.sh ===='
   echo 'Authentication is required to bootstrap configuration.'
   echo "Authenticating as: $(whoami)"
-  sudo -S echo
+  sudo echo
   echo '==== AUTHENTICATING COMPLETE ===='
 
   puts 'Bootstrapping' 'archrc'
@@ -129,7 +129,7 @@ main () {
     generate_ssh_key $privkey
   fi
 
-  sudo -S pacman -Syy
+  sudo pacman -Syy
 
   generate_locale
   install_aura

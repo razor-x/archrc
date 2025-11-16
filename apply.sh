@@ -14,7 +14,7 @@ main () {
   echo '==== AUTHENTICATING FOR archrc ./apply.sh ===='
   echo 'Authentication is required to apply configuration.'
   echo "Authenticating as: $(whoami)"
-  sudo -S echo
+  sudo echo
   echo '==== AUTHENTICATING COMPLETE ===='
 
   aconfmgr --aur-helper aura --config config apply
@@ -22,8 +22,8 @@ main () {
   # Apply again to ensure units installed by new packages are enabled.
   aconfmgr --aur-helper aura --config config apply
 
-  sudo -S locale-gen
-  sudo -S mkinitcpio -p linux
+  sudo locale-gen
+  sudo mkinitcpio -p linux
 }
 
 main "${1:-}"
