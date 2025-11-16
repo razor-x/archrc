@@ -1,0 +1,2 @@
+IgnorePath '/usr/*'
+IgnorePath '/var/*'
