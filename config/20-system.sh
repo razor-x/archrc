@@ -7,16 +7,29 @@ AddPackage base-devel # Basic tools to build Arch Linux packages
 AddPackage linux # The Linux kernel and modules
 AddPackage linux-firmware # Firmware files for Linux - Default set
 AddPackage efivar # Tools and libraries to work with EFI variables
+
 AddPackage sudo # Give certain users the ability to run some commands as root
+CopyFile /etc/sudoers
 
 if [ "$is_virtualbox" = true ]; then
   AddPackage virtualbox-guest-utils # VirtualBox Guest userspace utilities
   SystemdEnable vboxservice
 fi
 
+CopyFileTo /etc/fstab.$hostname /etc/fstab
+CopyFileTo /boot/loader/entries/arch.$hostname.conf /boot/loader/entries/arch.conf 755
+CopyFile /boot/loader/loader.conf 755
+
+CopyFile /etc/systemd/network/10-dhcp.network
+
+CopyFile /etc/locale.conf
+CopyFile /etc/locale.gen
+
+AddPackage terminus-font # Monospace bitmap font (for X11 and console)
+CopyFile /etc/vconsole.conf
+
 SystemdEnable systemd-networkd
 SystemdEnable systemd-resolved
-SystemdEnable sshd
 
 # Configuration
 
@@ -28,7 +41,10 @@ AddPackage --foreign aura-debug # Detached debugging symbols for aura
 # Services
 
 AddPackage openssh # SSH protocol implementation for remote login, command execution and file transfer
+SystemdEnable sshd
+CopyFile /etc/ssh/sshd_config
 
 # Tools
 
 AddPackage inetutils # A collection of common network programs
+

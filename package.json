@@ -1,7 +1,0 @@
-{
-  "type": "module",
-  "private": true,
-  "dependencies": {
-    "config-curator": "^2.0.0"
-  }
-}

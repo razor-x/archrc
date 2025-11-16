@@ -1,39 +1,38 @@
 # Arch Linux Configuration
 
-My Arch Linux configuration managed with [Config Curator] and [aconfmgr].
-
-[aconfmgr]: https://github.com/CyberShadow/aconfmgr
-[Config Curator]: https://github.com/razor-x/config-curator
+My Arch Linux configuration managed with [aconfmgr].
 
 ## Requirements
 
 These requirements are handled automatically when bootstrapping a new system.
 
-* [Aura].
 * [aconfmgr].
-* [Node.js] with [npm].
+* [Aura].
 
+[aconfmgr]: https://github.com/CyberShadow/aconfmgr
 [Aura]: https://fosskers.github.io/aura/
-[Node.js]: https://nodejs.org/
-[npm]: https://www.npmjs.com/
 
 ## Maintaining an existing Arch Linux system
 
-Install configuration without adding or removing any packages
+Periodic maintenance consists of running
 
 ```
-$ ./install.sh config
+$ ./save.sh
 ```
 
-This will update `aconfmgr/99-unsorted.sh` with any new or removed packages.
+If this results in uncommitted changes to the `config` directory,
+then there are unaccounted system changes.
+The changes should be reviewed, sorted, documented, committed and pushed.
 
-After incorporating these changes, install everything
+After incorporating these changes, apply the system configuration
 
 ```
-$ ./install.sh
+$ ./apply.sh
 ```
 
 ## Bootstrapping a new Arch Linux system
+
+### Add the new system to this configuration
 
 Before starting, commit a new loader entry to
 `boot/loader/entries/arch.<hostname>.conf`.
@@ -46,6 +45,9 @@ linux /vmlinuz-linux
 initrd /initramfs-linux.img
 options root=UUID=__UUID__ rw
 ```
+
+After bootstrapping, some files will be added and updated in the locally cloned repo.
+Commit and push them back once git is fully configured and authorized.
 
 ### First boot into live environment
 
@@ -203,13 +205,12 @@ Bootstrap the dependencies for archrc
 Install configuration and packages
 
 ```
-./install.sh
+./apply.sh
 ```
 
-Reinstall linux to ensure all kernal modules are ready for first boot
+#### Reboot into your new Arch Linux system!
 
 ```
-$ sudo pacman -S linux
 $ exit
 # exit
 # sudo reboot

@@ -43,6 +43,8 @@ patch_loader_entry () {
 
 generate_locale () {
   puts 'Generating' 'Locale'
+  sudo -S cp config/files/etc/locale.conf /etc/locale.conf
+  sudo -S cp config/files/etc/locale.gen /etc/locale.gen
   sudo -S locale-gen
   export "$(cat /etc/locale.conf)"
   puts 'Generated' 'Locale'
@@ -59,17 +61,6 @@ generate_ssh_key () {
   puts 'Generating' 'SSH key'
   ssh-keygen -t ed25519 -f "$privkey" -N "" -C "$(whoami)@$(uname -n)-$(date -I)"
   puts 'Generated' 'SSH key'
-}
-
-install_config () {
-  puts 'Installing' 'Config Curator'
-  sudo -S pacman -S --noconfirm rsync nodejs npm
-  npm ci
-  puts 'Installed' 'Config Curator'
-
-  puts 'Installing' 'Config'
-  sudo -S ./node_modules/.bin/curator
-  puts 'Installed' 'Config'
 }
 
 install_aura () (
@@ -101,7 +92,7 @@ install_aconfmgr () (
   sudo pacman -U --noconfirm ./aconfmgr-git-*.pkg.tar.zst
 
   mkdir -p aconfmgr
-  aconfmgr --aur-helper aura --config aconfmgr check
+  aconfmgr --aur-helper aura --config config check
   puts 'Installed' 'aconfmgr'
 )
 
@@ -117,10 +108,13 @@ main () {
     exit 1
   fi
 
-  puts 'Bootstrapping' 'archrc'
-
-  # Pre-authenticate for sudo.
+  echo '==== AUTHENTICATING FOR archrc ./bootstrap.sh ===='
+  echo 'Authentication is required to bootstrap configuration.'
+  echo 'Authenticating as: $(whoami)'
   sudo -S echo
+  echo '==== AUTHENTICATING COMPLETE ===='
+
+  puts 'Bootstrapping' 'archrc'
 
   set_hostname
   set_clock
@@ -135,9 +129,8 @@ main () {
     generate_ssh_key $privkey
   fi
 
-  sudo pacman -Syy
+  sudo -S pacman -Syy
 
-  install_config
   generate_locale
   install_aura
   install_aconfmgr
