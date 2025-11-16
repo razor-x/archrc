@@ -170,7 +170,7 @@ Clone this repo
 Manually install the `sudoers` file
 
 ```
-# cp /root/archrc/etc/sudoers /etc
+# cp /root/archrc/config/files/etc/sudoers /etc
 # rm -rf /root/archrc
 ```
 
