@@ -19,9 +19,6 @@ main () {
 
   aconfmgr --aur-helper aura --config config apply
 
-  # Apply again to ensure units installed by new packages are enabled.
-  aconfmgr --aur-helper aura --config config apply
-
   sudo -S locale-gen
   sudo -S mkinitcpio -p linux
 }
