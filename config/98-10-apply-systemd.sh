@@ -4,7 +4,7 @@
 
 while read -r unit; do
   if systemctl cat "$unit" &>/dev/null; then
-    trap "sudo -S systemctl enable $unit" 0
+    sudo -S systemctl enable "$unit"
   else
     echo "Unit not found: $unit"
   fi
