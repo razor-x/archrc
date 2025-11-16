@@ -3,5 +3,5 @@
 # shellcheck disable=SC2154
 
 while read -r unit; do
-  echo "$unit"
+  sudo -S systemctl enable "$unit"
 done < "$tmp_dir"/systemd/units
