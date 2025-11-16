@@ -11,6 +11,7 @@ AddPackage sudo # Give certain users the ability to run some commands as root
 
 if [ "$is_virtualbox" = true ]; then
   AddPackage virtualbox-guest-utils # VirtualBox Guest userspace utilities
+  SystemdEnable vboxservice
 fi
 
 SystemdEnable systemd-networkd
