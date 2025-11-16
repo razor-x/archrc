@@ -29,7 +29,7 @@ set_clock () {
 copy_fstab () {
   puts 'Save' 'fstab'
   hostname="$(uname -n)"
-  cp /etc/fstab "etc/fstab.${hostname,,}"
+  cp /etc/fstab "config/files/etc/fstab.${hostname,,}"
   puts 'Saved' 'fstab'
 }
 
@@ -37,7 +37,7 @@ patch_loader_entry () {
   puts 'Patch' 'Arch loader entry'
   root_uuid="$(cat /etc/fstab | grep -oP 'UUID=\K\S+(?=\s+/\s)')"
   hostname="$(uname -n)"
-  sed -i "s/__UUID__/$root_uuid/g" "boot/loader/entries/arch.${hostname,,}.conf"
+  sed -i "s/__UUID__/$root_uuid/g" "config/files/boot/loader/entries/arch.${hostname,,}.conf"
   puts 'Patched' 'Arch loader entry'
 }
 
