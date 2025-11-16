@@ -3,7 +3,7 @@
 # shellcheck disable=SC2154
 
 while read -r unit; do
-  if systemctl list-unit-files | grep -q "^${unit}[@.]"; then
+  if systemctl cat "$unit" &>/dev/null; then
     sudo -S systemctl enable "$unit"
   else
     echo "Unit not found: $unit"
