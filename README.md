@@ -208,12 +208,6 @@ Install configuration and packages
 ./apply.sh
 ```
 
-#### Change the default shell
-
-```
-$ chsh -s /usr/bin/fish
-```
-
 #### Reboot into your new Arch Linux system!
 
 ```
