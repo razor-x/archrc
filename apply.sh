@@ -4,8 +4,6 @@ set -e
 set -u
 
 main () {
-  cmd="${1:-}"
-
   if [ "$(id -u)" -eq 0 ]; then
     echo 'Must not run as root.'
     exit 1
@@ -30,5 +28,5 @@ main () {
   fi
 }
 
-main "${1:-}"
+main
 exit

@@ -142,5 +142,5 @@ main () {
   puts 'Bootstrapped' 'archrc'
 }
 
-main "${1:-}"
+main
 exit
