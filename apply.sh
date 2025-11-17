@@ -24,6 +24,10 @@ main () {
 
   sudo locale-gen
   sudo mkinitcpio -p linux
+
+  if command -v fish &> /dev/null; then
+    fish -c fish_update_completions
+  fi
 }
 
 main "${1:-}"
