@@ -16,7 +16,7 @@ if [ "$is_virtualbox" = true ]; then
   SystemdEnable vboxservice
 fi
 
-CopyFileTo "/etc/fstab.$hostname /etc/fstab"
+CopyFileTo "/etc/fstab.$hostname" /etc/fstab
 CopyFileTo "/boot/loader/entries/arch.$hostname.conf" /boot/loader/entries/arch.conf 755
 CopyFile /boot/loader/loader.conf 755
 
