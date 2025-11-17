@@ -47,4 +47,6 @@ CopyFile /etc/ssh/sshd_config
 # Tools
 
 AddPackage inetutils # A collection of common network programs
+AddPackage less # A terminal based program for viewing text files
+AddPackage man-db # A utility for reading man pages
 
