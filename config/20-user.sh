@@ -8,6 +8,7 @@ AddPackage neovim # Fork of Vim aiming to improve user experience, plugins, and 
 AddPackage fish # Smart and user friendly shell intended mostly for interactive use
 
 AddPackage gnupg # Complete and free implementation of the OpenPGP standard
+AddPackage pinentry # Collection of simple PIN or passphrase entry dialogs which utilize the Assuan protocol
 
 # Development
 
