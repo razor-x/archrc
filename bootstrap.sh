@@ -78,22 +78,7 @@ install_aura () (
 
 install_aconfmgr () (
   puts 'Installing' 'aconfmgr'
-
-  # UPSTREAM: Need aura support
-  # https://github.com/CyberShadow/aconfmgr/pull/228
-  #
-  # aura -A --noconfirm aconfmgr-git
-
-  temp_dir=$(mktemp -d)
-  trap "rm -rf $temp_dir; exit" HUP INT TERM PIPE EXIT
-  cd "$temp_dir"
-  git clone https://aur.archlinux.org/aconfmgr-git.git
-  cd aconfmgr-git
-  sed -i 's|CyberShadow/aconfmgr|rxfork/aconfmgr#branch=aura-aur-helper|g' PKGBUILD
-  makepkg -s
-  sudo pacman -U --noconfirm ./aconfmgr-git-*.pkg.tar.zst
-
-  mkdir -p aconfmgr
+  aura -A --noconfirm aconfmgr-git
   aconfmgr --aur-helper aura --config config check
   puts 'Installed' 'aconfmgr'
 )
