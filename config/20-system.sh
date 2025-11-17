@@ -16,8 +16,8 @@ if [ "$is_virtualbox" = true ]; then
   SystemdEnable vboxservice
 fi
 
-CopyFileTo /etc/fstab.$hostname /etc/fstab
-CopyFileTo /boot/loader/entries/arch.$hostname.conf /boot/loader/entries/arch.conf 755
+CopyFileTo "/etc/fstab.$hostname /etc/fstab"
+CopyFileTo "/boot/loader/entries/arch.$hostname.conf" /boot/loader/entries/arch.conf 755
 CopyFile /boot/loader/loader.conf 755
 
 CopyFile /etc/systemd/network/10-dhcp.network
