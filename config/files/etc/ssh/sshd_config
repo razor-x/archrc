@@ -2,5 +2,6 @@ PermitRootLogin no
 PasswordAuthentication no
 ChallengeResponseAuthentication no
 TCPKeepAlive yes
+UsePAM yes
 
 Subsystem sftp /usr/lib/ssh/sftp-server
