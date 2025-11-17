@@ -199,13 +199,13 @@ $ cd archrc
 Bootstrap the dependencies for archrc
 
 ```
-./bootstrap.sh
+$ ./bootstrap.sh
 ```
 
 Install configuration and packages
 
 ```
-./apply.sh
+$ ./apply.sh
 ```
 
 #### Reboot into your new Arch Linux system!
@@ -213,7 +213,7 @@ Install configuration and packages
 ```
 $ exit
 # exit
-# sudo reboot
+# reboot
 ```
 
 ## License
