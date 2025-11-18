@@ -72,7 +72,7 @@ install_aura () (
   git clone https://aur.archlinux.org/aura.git
   cd aura
   makepkg -s
-  sudo pacman -U --noconfirm ./aura-*.pkg.tar.zst
+  sudo pacman -U --noconfirm ./aura-[0-9]*.pkg.tar.zst
   puts 'Installed' 'Aura'
 )
 
