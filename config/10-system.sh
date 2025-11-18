@@ -56,6 +56,7 @@ CopyFile /etc/xdg/reflector/reflector.conf
 SystemdEnable reflector
 
 # AUR
+AddPackage --foreign aura # A package manager for Arch Linux and its AUR
 sed -i \
   "/OPTIONS=/s/ debug / !debug /" \
   "$(GetPackageOriginalFile pacman /etc/makepkg.conf)" # Disable debug packages
