@@ -41,7 +41,7 @@ AddPackage sudo # Give certain users the ability to run some commands as root
 CopyFile /etc/sudoers
 
 ## PAM
-CopyFile /etc/security/faillock.con
+CopyFile /etc/security/faillock.conf
 
 # Network
 
