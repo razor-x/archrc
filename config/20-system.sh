@@ -9,7 +9,6 @@ AddPackage linux # The Linux kernel and modules
 AddPackage linux-firmware # Firmware files for Linux - Default set
 
 ## AUR
-#TODO
 AddPackage --foreign aura # A package manager for Arch Linux and its AUR
 
 ## Boot
@@ -49,7 +48,6 @@ SystemdEnable sshd
 CopyFile /etc/ssh/sshd_config
 
 # Reflector
-#TODO
 AddPackage reflector # A Python 3 module and script to retrieve and filter the latest Pacman mirror list.
 CopyFile /etc/xdg/reflector/reflector.conf
 SystemdEnable reflector
