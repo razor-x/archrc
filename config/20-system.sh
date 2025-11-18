@@ -58,3 +58,8 @@ AddPackage inetutils # A collection of common network programs
 AddPackage less # A terminal based program for viewing text files
 AddPackage man-db # A utility for reading man pages
 AddPackage efivar # Tools and libraries to work with EFI variables
+
+## VirtualBox
+AddPackage virtualbox # Powerful x86 virtualization for enterprise as well as home use
+AddPackage virtualbox-host-modules-arch # Virtualbox host kernel modules for Arch Kernel
+ virtualbox
