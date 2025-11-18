@@ -43,6 +43,10 @@ CopyFile /etc/sudoers
 ## PAM
 CopyFile /etc/security/faillock.conf
 
+# Performance
+
+CopyFile /etc/sysctl.d/99-inotify.conf
+
 # Network
 
 CopyFile /etc/systemd/network/10-dhcp.network
