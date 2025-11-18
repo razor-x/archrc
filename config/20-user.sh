@@ -1,12 +1,18 @@
 # Core
 
+## Configuration
 AddPackage chezmoi # Manage your dotfiles across multiple machines
+AddPackage --foreign aconfmgr-git # A configuration manager for Arch Linux
+
+## Tools
 AddPackage git # the fast distributed version control system
 AddPackage rsync # A fast and versatile file copying tool for remote and local files
+
 AddPackage neovim # Fork of Vim aiming to improve user experience, plugins, and GUIs
 
 AddPackage fish # Smart and user friendly shell intended mostly for interactive use
 
+## GPG
 AddPackage gnupg # Complete and free implementation of the OpenPGP standard
 AddPackage pinentry # Collection of simple PIN or passphrase entry dialogs which utilize the Assuan protocol
 
