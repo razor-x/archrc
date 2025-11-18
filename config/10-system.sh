@@ -8,6 +8,10 @@ AddPackage base-devel # Basic tools to build Arch Linux packages
 AddPackage linux # The Linux kernel and modules
 AddPackage linux-firmware # Firmware files for Linux - Default set
 
+## Pacman
+AddPackage pacman-contrib # Contributed scripts and tools for pacman systems
+SystemdEnable paccache.timer
+
 ## AUR
 AddPackage --foreign aura # A package manager for Arch Linux and its AUR
 sed -i \
