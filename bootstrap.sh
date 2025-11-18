@@ -63,22 +63,16 @@ generate_ssh_key () {
   puts 'Generated' 'SSH key'
 }
 
-install_aura () (
-  puts 'Installing' 'Aura'
+install_aconfmgr () (
+  puts 'Installing' 'aconfmgr'
   temp_dir=$(mktemp -d)
   trap "rm -rf $temp_dir; exit" HUP INT TERM PIPE EXIT
   cd "$temp_dir"
   sudo pacman -S --noconfirm git cargo
-  git clone https://aur.archlinux.org/aura.git
-  cd aura
+  git clone https://aur.archlinux.org/aconfmgr-git.git
+  cd aconfmgr-git
   makepkg -s
-  sudo pacman -U --noconfirm ./aura-[0-9]*.pkg.tar.zst
-  puts 'Installed' 'Aura'
-)
-
-install_aconfmgr () (
-  puts 'Installing' 'aconfmgr'
-  aura -A --noconfirm aconfmgr-git
+  sudo pacman -U --noconfirm ./aconfmgr-*.pkg.tar.zst
   aconfmgr --aur-helper aura --config config check
   puts 'Installed' 'aconfmgr'
 )
