@@ -114,7 +114,6 @@ main () {
   sudo pacman -Syy
 
   generate_locale
-  install_aura
   install_aconfmgr
   update_repo_remote
 
