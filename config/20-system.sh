@@ -51,6 +51,7 @@ CopyFile /etc/ssh/sshd_config
 # Reflector
 #TODO
 AddPackage reflector # A Python 3 module and script to retrieve and filter the latest Pacman mirror list.
+CopyFile /etc/xdg/reflector/reflector.conf
 SystemdEnable reflector
 
 # Tools
