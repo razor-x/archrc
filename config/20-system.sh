@@ -10,6 +10,9 @@ AddPackage linux-firmware # Firmware files for Linux - Default set
 
 ## AUR
 AddPackage --foreign aura # A package manager for Arch Linux and its AUR
+sed -i \
+  "/OPTIONS=/s/ debug / !debug /" \
+  "$(GetPackageOriginalFile pacman /etc/makepkg.conf)" # Disable debug packages
 
 ## Boot
 CopyFileTo "/etc/fstab.$hostname" /etc/fstab
