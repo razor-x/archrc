@@ -46,6 +46,10 @@ CopyFile /etc/sudoers
 ## PAM
 CopyFile /etc/security/faillock.conf
 
+## nftables
+CopyFile /etc/nftables.conf
+SystemdEnable nftables
+
 # Performance
 
 CopyFile /etc/sysctl.d/99-inotify.conf
