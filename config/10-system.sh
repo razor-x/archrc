@@ -51,6 +51,7 @@ CopyFile /etc/sudoers
 CopyFile /etc/security/faillock.conf
 
 ## nftables
+AddPackage nftables # Netfilter tables userspace tools
 CopyFile /etc/nftables.conf
 SystemdEnable nftables
 
