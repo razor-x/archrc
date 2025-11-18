@@ -69,6 +69,9 @@ SystemdEnable systemd-resolved
 
 # Services
 
+# NTP
+SystemdEnable systemd-timesyncd
+
 # SSH
 AddPackage openssh # SSH protocol implementation for remote login, command execution and file transfer
 SystemdEnable sshd
