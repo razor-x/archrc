@@ -15,7 +15,7 @@ main () {
   sudo echo
   echo '==== AUTHENTICATING COMPLETE ===='
 
-  aconfmgr --aur-helper aura --config config save
+  aconfmgr --config config save
 }
 
 main

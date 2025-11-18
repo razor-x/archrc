@@ -73,7 +73,7 @@ install_aconfmgr () (
   cd aconfmgr-git
   makepkg -s
   sudo pacman -U --noconfirm ./aconfmgr-*.pkg.tar.zst
-  aconfmgr --aur-helper aura --config config check
+  aconfmgr --config config check
   puts 'Installed' 'aconfmgr'
 )
 

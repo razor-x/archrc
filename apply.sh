@@ -15,10 +15,10 @@ main () {
   sudo echo
   echo '==== AUTHENTICATING COMPLETE ===='
 
-  aconfmgr --aur-helper aura --config config apply
+  aconfmgr --config config apply
 
   # Apply again to ensure units installed by new packages are enabled.
-  aconfmgr --aur-helper aura --config config apply
+  aconfmgr --config config apply
 
   sudo locale-gen
   sudo mkinitcpio -p linux
