@@ -46,6 +46,7 @@ CopyFile /etc/security/faillock.conf
 # Performance
 
 CopyFile /etc/sysctl.d/99-inotify.conf
+CopyFile /etc/systemd/journald.conf.d/99-size.conf
 
 # Network
 
