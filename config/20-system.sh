@@ -24,10 +24,14 @@ CopyFile /etc/locale.gen
 AddPackage terminus-font # Monospace bitmap font (for X11 and console)
 CopyFile /etc/vconsole.conf
 
-## VirtualBox Guest
+## VirtualBox
 if [ "$is_virtualbox" = true ]; then
   AddPackage virtualbox-guest-utils # VirtualBox Guest userspace utilities
   SystemdEnable vboxservice
+else
+  AddPackage virtualbox # Powerful x86 virtualization for enterprise as well as home use
+  AddPackage virtualbox-host-modules-arch # Virtualbox host kernel modules for Arch Kernel
+   virtualbox
 fi
 
 # sudo
@@ -58,8 +62,3 @@ AddPackage inetutils # A collection of common network programs
 AddPackage less # A terminal based program for viewing text files
 AddPackage man-db # A utility for reading man pages
 AddPackage efivar # Tools and libraries to work with EFI variables
-
-## VirtualBox
-AddPackage virtualbox # Powerful x86 virtualization for enterprise as well as home use
-AddPackage virtualbox-host-modules-arch # Virtualbox host kernel modules for Arch Kernel
- virtualbox
