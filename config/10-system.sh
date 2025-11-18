@@ -8,16 +8,6 @@ AddPackage base-devel # Basic tools to build Arch Linux packages
 AddPackage linux # The Linux kernel and modules
 AddPackage linux-firmware # Firmware files for Linux - Default set
 
-## Pacman
-AddPackage pacman-contrib # Contributed scripts and tools for pacman systems
-SystemdEnable paccache.timer
-
-## AUR
-AddPackage --foreign aura # A package manager for Arch Linux and its AUR
-sed -i \
-  "/OPTIONS=/s/ debug / !debug /" \
-  "$(GetPackageOriginalFile pacman /etc/makepkg.conf)" # Disable debug packages
-
 ## Boot
 CopyFileTo "/etc/fstab.$hostname" /etc/fstab
 CopyFileTo "/boot/loader/entries/arch.$hostname.conf" /boot/loader/entries/arch.conf 755
@@ -27,9 +17,22 @@ CopyFile /boot/loader/loader.conf 755
 CopyFile /etc/locale.conf
 CopyFile /etc/locale.gen
 
+## Time
+SystemdEnable systemd-timesyncd
+
 ## Console
 AddPackage terminus-font # Monospace bitmap font (for X11 and console)
 CopyFile /etc/vconsole.conf
+
+## Network
+
+CopyFile /etc/systemd/network/10-dhcp.network
+SystemdEnable systemd-networkd
+
+## DNS
+
+CopyFile /etc/systemd/resolved.conf.d/99-fallback.conf
+SystemdEnable systemd-resolved
 
 ## VirtualBox
 if [ "$is_virtualbox" = true ]; then
@@ -40,6 +43,23 @@ else
   AddPackage virtualbox-host-modules-arch # Virtualbox host kernel modules for Arch Kernel
    virtualbox
 fi
+
+# Pacman
+
+## paccache
+AddPackage pacman-contrib # Contributed scripts and tools for pacman systems
+SystemdEnable paccache.timer
+
+## Reflector
+AddPackage reflector # A Python 3 module and script to retrieve and filter the latest Pacman mirror list.
+CopyFile /etc/xdg/reflector/reflector.conf
+SystemdEnable reflector
+
+# AUR
+AddPackage --foreign aura # A package manager for Arch Linux and its AUR
+sed -i \
+  "/OPTIONS=/s/ debug / !debug /" \
+  "$(GetPackageOriginalFile pacman /etc/makepkg.conf)" # Disable debug packages
 
 # Security
 
@@ -55,34 +75,21 @@ AddPackage nftables # Netfilter tables userspace tools
 CopyFile /etc/nftables.conf
 SystemdEnable nftables
 
-# Performance
-
-CopyFile /etc/sysctl.d/99-inotify.conf
-CopyFile /etc/systemd/journald.conf.d/99-size.conf
-SystemdEnable systemd-oomd
-
-# Network
-
-CopyFile /etc/systemd/network/10-dhcp.network
-SystemdEnable systemd-networkd
-
-CopyFile /etc/systemd/resolved.conf.d/99-fallback.conf
-SystemdEnable systemd-resolved
-
-# Services
-
-# NTP
-SystemdEnable systemd-timesyncd
-
 # SSH
 AddPackage openssh # SSH protocol implementation for remote login, command execution and file transfer
 SystemdEnable sshd
 CopyFile /etc/ssh/sshd_config
 
-# Reflector
-AddPackage reflector # A Python 3 module and script to retrieve and filter the latest Pacman mirror list.
-CopyFile /etc/xdg/reflector/reflector.conf
-SystemdEnable reflector
+# Performance
+
+## inotify
+CopyFile /etc/sysctl.d/99-inotify.conf
+
+## journald
+CopyFile /etc/systemd/journald.conf.d/99-size.conf
+
+## OOM
+SystemdEnable systemd-oomd
 
 # Tools
 
