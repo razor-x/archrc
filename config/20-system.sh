@@ -52,6 +52,8 @@ CopyFile /etc/systemd/journald.conf.d/99-size.conf
 
 CopyFile /etc/systemd/network/10-dhcp.network
 SystemdEnable systemd-networkd
+
+CopyFile /etc/systemd/resolved.conf.d/99-fallback.conf
 SystemdEnable systemd-resolved
 
 # Services
