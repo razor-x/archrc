@@ -32,3 +32,4 @@ AddPackage rclone # rsync for cloud storage
 AddPackage ripgrep # A search tool that combines the usability of ag with the raw speed of grep
 AddPackage unrar-free # Free utility to extract files from RAR archives
 AddPackage wget # Network utility to retrieve files from the web
+AddPackage tmux # Terminal multiplexer
