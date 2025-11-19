@@ -29,13 +29,17 @@ CopyFile /etc/vconsole.conf
 CopyFile /etc/systemd/network/10-dhcp.network
 SystemdEnable systemd-networkd
 
+if "$has_wifi"; then
+  AddPackage iwd # Internet Wireless Daemon
+fi
+
 ## DNS
 
 CopyFile /etc/systemd/resolved.conf.d/99-fallback.conf
 SystemdEnable systemd-resolved
 
 ## VirtualBox
-if [ "$is_virtualbox" = true ]; then
+if "$is_virtualbox"; then
   AddPackage virtualbox-guest-utils # VirtualBox Guest userspace utilities
   SystemdEnable vboxservice
 else
