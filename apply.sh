@@ -4,7 +4,7 @@ set -e
 set -u
 
 main () {
-  if [ "$(id -u)" -eq 0 ]; then
+  if [[ $EUID -eq 0 ]]; then
     echo 'Must not run as root.'
     exit 1
   fi

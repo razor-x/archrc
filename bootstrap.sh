@@ -53,7 +53,7 @@ generate_locale () {
 generate_ssh_key () {
   privkey="${1:-}"
 
-  if [ -z "${privkey}" ]; then
+  if [[ -z "$privkey" ]]; then
     echo 'Output path for SSH private key was empty'
     exit 3
   fi
@@ -84,7 +84,7 @@ update_repo_remote () (
 )
 
 main () {
-  if [ "$(id -u)" -eq 0 ]; then
+  if [[ $EUID -eq 0 ]]; then
     echo 'Must not run as root.'
     exit 1
   fi
@@ -104,7 +104,7 @@ main () {
   patch_loader_entry
 
   privkey="$HOME/.ssh/id_ed25519"
-  if [ -f "$privkey" ]; then
+  if [[ -f "$privkey" ]]; then
     puts 'Skipping' 'SSH key generation'
   else
     sudo pacman -S --noconfirm git openssh
