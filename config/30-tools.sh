@@ -5,6 +5,7 @@
 AddPackage efivar # Tools and libraries to work with EFI variables
 AddPackage lsof # Lists open files for running Unix processes
 AddPackage usbutils # A collection of USB tools to query connected USB devices
+AddPackage pciutils # PCI bus configuration space access library and tools
 
 ## Filesystem
 
@@ -12,26 +13,28 @@ AddPackage gptfdisk # A text-mode partitioning tool that works on GUID Partition
 
 ## Network
 
+AddPackage bind # A complete, highly portable implementation of the DNS protocol
 AddPackage dnssec-tools # libval & dnssec management tools
 AddPackage inetutils # A collection of common network programs
 AddPackage openbsd-netcat # TCP/IP swiss army knife. OpenBSD variant.
+AddPackage openssl # The Open Source toolkit for Secure Sockets Layer and Transport Layer Security
 AddPackage traceroute # Tracks the route taken by packets over an IP network
 AddPackage whois # Intelligent WHOIS client
 
-
-
 ## Canonical
 
+AddPackage curl # command line tool and library for transferring data with URLs
 AddPackage jq # Command-line JSON processor
 AddPackage less # A terminal based program for viewing text files
 AddPackage man-db # A utility for reading man pages
 AddPackage man-pages # Linux man pages
 AddPackage moreutils # A growing collection of the unix tools that nobody thought to write thirty years ago
 AddPackage pkgfile # A tool to search for files in official repository packages
+AddPackage rsync # A fast and versatile file copying tool for remote and local files
 AddPackage strace # A diagnostic, debugging and instructional userspace tracer
 AddPackage tree # A directory listing program displaying a depth indented list of files
 AddPackage wget # Network utility to retrieve files from the web
-AddPackage rsync # A fast and versatile file copying tool for remote and local files
+AddPackage which # A utility to show the full path of commands
 
 AddPackage rclone # rsync for cloud storage
 AddPackage ripgrep # A search tool that combines the usability of ag with the raw speed of grep
@@ -42,9 +45,15 @@ AddPackage git-lfs # Git extension for versioning large files
 
 AddPackage 7zip # File archiver for extremely high compression
 AddPackage unrar-free # Free utility to extract files from RAR archives
+AddPackage zlib # Compression library implementing the deflate compression method found in gzip and PKZIP
+AddPackage zip # Compressor/archiver for creating and modifying zipfiles
+AddPackage unzip # For extracting and viewing files in .zip archives
 
 ## Development
 
+AddPackage libffi # Portable foreign function interface library
+AddPackage python # The Python programming language
+AddPackage sqlite # A C library that implements an SQL database engine
 AddPackage blas-openblas # An optimized BLAS library based on GotoBLAS2 1.13 BSD (Provides BLAS/CBLAS/LAPACK/LAPACKE system-wide)
 AddPackage cabal-install # The command-line interface for Cabal and Hackage.
 AddPackage composer # Dependency Manager for PHP
