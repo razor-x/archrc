@@ -23,4 +23,3 @@ AddPackage rust # Systems programming language focused on safety, speed and conc
 
 ## Node.js
 AddPackage nodejs # Evented I/O for V8 javascript ("Current" release)
-AddPackage npm # JavaScript package manager
