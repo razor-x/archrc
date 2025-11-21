@@ -38,8 +38,8 @@ AddPackage php # A general-purpose scripting language that is especially suited 
 AddPackage composer # Dependency Manager for PHP
 
 ## Python
-
 AddPackage python # The Python programming language
+
 ## Ruby
 
 ## R
