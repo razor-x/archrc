@@ -53,3 +53,4 @@ AddPackage rust # Systems programming language focused on safety, speed and conc
 AddPackage ctags # Generates an index file of language objects found in source files
 AddPackage github-cli # The GitHub CLI
 AddPackage mise # The front-end to your dev env
+AddPackage xh # Friendly and fast tool for sending HTTP requests
