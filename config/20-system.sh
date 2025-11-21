@@ -13,11 +13,6 @@ CopyFileTo "/etc/fstab.$hostname" /etc/fstab
 CopyFileTo "/boot/loader/entries/arch.$hostname.conf" /boot/loader/entries/arch.conf 755
 CopyFile /boot/loader/loader.conf 755
 
-## Filesystem
-
-AddPackage gptfdisk # A text-mode partitioning tool that works on GUID Partition Table (GPT) disks
-AddPackage lsof # Lists open files for running Unix processes
-
 ## Locale
 CopyFile /etc/locale.conf
 CopyFile /etc/locale.gen
