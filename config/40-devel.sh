@@ -30,6 +30,10 @@ AddPackage cabal-install # The command-line interface for Cabal and Hackage.
 ## Node.js
 
 AddPackage nodejs # Evented I/O for V8 javascript ("Current" release)
+AddPackage npm # JavaScript package manager
+AddPackage pnpm # Fast, disk space efficient package manager
+AddPackage yarn # Fast, reliable, and secure dependency management
+
 ## PHP
 AddPackage php # A general-purpose scripting language that is especially suited to web development
 AddPackage composer # Dependency Manager for PHP
