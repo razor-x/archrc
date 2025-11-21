@@ -28,7 +28,6 @@ AddPackage ghc # The Glasgow Haskell Compiler
 AddPackage cabal-install # The command-line interface for Cabal and Hackage.
 
 ## Node.js
-
 AddPackage nodejs # Evented I/O for V8 javascript ("Current" release)
 AddPackage npm # JavaScript package manager
 AddPackage pnpm # Fast, disk space efficient package manager
