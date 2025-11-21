@@ -25,16 +25,15 @@ AddPackage terminus-font # Monospace bitmap font (for X11 and console)
 CopyFile /etc/vconsole.conf
 
 ## Network
-
 CopyFile /etc/systemd/network/10-dhcp.network
 SystemdEnable systemd-networkd
 
+## Wi-Fi
 if "$has_wifi"; then
   AddPackage iwd # Internet Wireless Daemon
 fi
 
 ## DNS
-
 CopyFile /etc/systemd/resolved.conf.d/99-fallback.conf
 SystemdEnable systemd-resolved
 
@@ -48,7 +47,7 @@ else
    virtualbox
 fi
 
-# Pacman
+# Packages
 
 ## paccache
 AddPackage pacman-contrib # Contributed scripts and tools for pacman systems
@@ -59,7 +58,7 @@ AddPackage reflector # A Python 3 module and script to retrieve and filter the l
 CopyFile /etc/xdg/reflector/reflector.conf
 SystemdEnable reflector
 
-# AUR
+## Aura
 AddPackage --foreign aura # A package manager for Arch Linux and its AUR
 sed -i \
   "/OPTIONS=/s/ debug / !debug /" \
@@ -79,7 +78,7 @@ AddPackage nftables # Netfilter tables userspace tools
 CopyFile /etc/nftables.conf
 SystemdEnable nftables
 
-# SSH
+## SSH
 AddPackage openssh # SSH protocol implementation for remote login, command execution and file transfer
 SystemdEnable sshd
 CopyFile /etc/ssh/sshd_config
