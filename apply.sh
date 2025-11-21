@@ -15,6 +15,8 @@ main () {
   sudo echo
   echo '==== AUTHENTICATING COMPLETE ===='
 
+  sudo pacman -Syy
+
   aconfmgr --config config apply
 
   # Apply again to ensure units installed by new packages are enabled.
