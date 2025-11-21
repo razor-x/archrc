@@ -7,6 +7,7 @@ AddPackage base # Minimal package set to define a basic Arch Linux installation
 AddPackage base-devel # Basic tools to build Arch Linux packages
 AddPackage linux # The Linux kernel and modules
 AddPackage linux-firmware # Firmware files for Linux - Default set
+AddPackage linux-headers # Headers and scripts for building modules for the Linux kernel
 
 ## Boot
 CopyFileTo "/etc/fstab.$hostname" /etc/fstab

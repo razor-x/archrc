@@ -1,20 +1,51 @@
-AddPackage libffi # Portable foreign function interface library
-AddPackage python # The Python programming language
-AddPackage sqlite # A C library that implements an SQL database engine
+# Libraries
+
 AddPackage blas-openblas # An optimized BLAS library based on GotoBLAS2 1.13 BSD (Provides BLAS/CBLAS/LAPACK/LAPACKE system-wide)
-AddPackage cabal-install # The command-line interface for Cabal and Hackage.
-AddPackage composer # Dependency Manager for PHP
-AddPackage ctags # Generates an index file of language objects found in source files
-AddPackage gcc-fortran # Fortran front-end for GCC
-AddPackage ghc # The Glasgow Haskell Compiler
-AddPackage go # Core compiler tools for the Go programming language
-AddPackage jdk-openjdk # OpenJDK Java 25 development kit
-AddPackage leiningen # Automate Clojure projects
+AddPackage libffi # Portable foreign function interface library
 AddPackage libgit2 # A linkable library for Git
 AddPackage libyaml # YAML 1.1 library
-AddPackage linux-headers # Headers and scripts for building modules for the Linux kernel
 AddPackage perl-libwww # The World-Wide Web library for Perl
-AddPackage php # A general-purpose scripting language that is especially suited to web development
-AddPackage r # Language and environment for statistical computing and graphics
-AddPackage rust # Systems programming language focused on safety, speed and concurrency
+AddPackage sqlite # A C library that implements an SQL database engine
+
+# Languages
+
+## C
+AddPackage gcc # The GNU Compiler Collection - C and C++ frontends
+AddPackage gcc-fortran # Fortran front-end for GCC
+
+## Clojure
+AddPackage clojure # Lisp dialect for the JVM
+AddPackage leiningen # Automate Clojure projects
+
+## Go
+AddPackage go # Core compiler tools for the Go programming language
+
+## Java
+AddPackage jdk-openjdk # OpenJDK Java 25 development kit
+
+## Haskell
+AddPackage ghc # The Glasgow Haskell Compiler
+AddPackage cabal-install # The command-line interface for Cabal and Hackage.
+
+## Node.js
+
 AddPackage nodejs # Evented I/O for V8 javascript ("Current" release)
+## PHP
+AddPackage php # A general-purpose scripting language that is especially suited to web development
+AddPackage composer # Dependency Manager for PHP
+
+## Python
+
+AddPackage python # The Python programming language
+## Ruby
+
+## R
+AddPackage r # Language and environment for statistical computing and graphics
+
+## Rust
+AddPackage rust # Systems programming language focused on safety, speed and concurrency
+
+# CLI
+
+AddPackage ctags # Generates an index file of language objects found in source files
+AddPackage github-cli # The GitHub CLI
