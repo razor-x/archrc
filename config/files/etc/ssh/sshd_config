@@ -4,4 +4,6 @@ ChallengeResponseAuthentication no
 TCPKeepAlive yes
 UsePAM yes
 
+AcceptEnv TMUX
+
 Subsystem sftp /usr/lib/ssh/sftp-server
