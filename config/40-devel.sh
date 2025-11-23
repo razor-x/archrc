@@ -27,6 +27,10 @@ AddPackage jdk-openjdk # OpenJDK Java 25 development kit
 AddPackage ghc # The Glasgow Haskell Compiler
 AddPackage cabal-install # The command-line interface for Cabal and Hackage.
 
+## Lua
+AddPackage lua # Powerful lightweight programming language designed for extending applications
+AddPackage stylua # Deterministic code formatter for Lua
+
 ## Node.js
 AddPackage nodejs # Evented I/O for V8 javascript ("Current" release)
 AddPackage npm # JavaScript package manager
