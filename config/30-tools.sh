@@ -7,11 +7,10 @@ AddPackage fisher # A package manager for the fish shell
 ## ZSH
 AddPackage zsh # A very advanced and programmable command interpreter (shell) for UNIX
 
-## tmux
+## TUI
 AddPackage tmux # Terminal multiplexer
-
-## Neovim
 AddPackage neovim # Fork of Vim aiming to improve user experience, plugins, and GUIs
+AddPackage nnn # The fastest terminal file manager ever written.
 
 # Sysadmin
 
