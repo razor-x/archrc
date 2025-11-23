@@ -11,6 +11,7 @@ AddPackage zsh # A very advanced and programmable command interpreter (shell) fo
 AddPackage tmux # Terminal multiplexer
 AddPackage neovim # Fork of Vim aiming to improve user experience, plugins, and GUIs
 AddPackage nnn # The fastest terminal file manager ever written.
+AddPackage xh # Friendly and fast tool for sending HTTP requests
 
 # Sysadmin
 
