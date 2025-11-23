@@ -43,7 +43,12 @@ AddPackage composer # Dependency Manager for PHP
 
 ## Python
 AddPackage python # The Python programming language
+AddPackage python-numpy # Scientific tools for Python
 AddPackage bpython # Fancy ncurses interface to the Python interpreter
+AddPackage ruff # An extremely fast Python linter, written in Rust
+AddPackage python-pip # The PyPA recommended tool for installing Python packages
+AddPackage python-poetry # Python dependency management and packaging made easy
+AddPackage uv # An extremely fast Python package installer and resolver written in Rust
 
 ## Ruby
 AddPackage ruby # An object-oriented language for quick and easy programming
