@@ -29,7 +29,10 @@ AddPackage cabal-install # The command-line interface for Cabal and Hackage.
 
 ## Lua
 AddPackage lua # Powerful lightweight programming language designed for extending applications
+AddPackage lua-sec # Lua bindings for OpenSSL library to provide TLS/SSL communication for Lua 5.4
 AddPackage stylua # Deterministic code formatter for Lua
+AddPackage selene # Blazing-fast modern Lua linter written in Rust
+AddPackage luarocks # Deployment and management system for Lua modules
 
 ## Node.js
 AddPackage nodejs # Evented I/O for V8 javascript ("Current" release)
