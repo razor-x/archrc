@@ -43,8 +43,12 @@ AddPackage composer # Dependency Manager for PHP
 
 ## Python
 AddPackage python # The Python programming language
+AddPackage bpython # Fancy ncurses interface to the Python interpreter
 
 ## Ruby
+AddPackage ruby # An object-oriented language for quick and easy programming
+AddPackage ruby-stdlib # Full Ruby StdLib including default gems, bundled gems and tools
+AddPackage ruby-pry # A runtime developer console and IRB alternative with powerful introspection capabilities
 
 ## R
 AddPackage r # Language and environment for statistical computing and graphics
