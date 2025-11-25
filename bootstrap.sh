@@ -2,7 +2,6 @@
 
 # shellcheck disable=SC2064,SC2086
 
-set -e
 set -u
 
 puts () {
@@ -67,10 +66,10 @@ install_aconfmgr () (
   puts 'Installing' 'aconfmgr'
   temp_dir=$(mktemp -d)
   trap "rm -rf $temp_dir; exit" HUP INT TERM PIPE EXIT
-  cd "$temp_dir"
+  cd "$temp_dir" || exit 4
   sudo pacman -S --noconfirm git cargo
   git clone https://aur.archlinux.org/aconfmgr-git.git
-  cd aconfmgr-git
+  cd aconfmgr-git || exit 5
   makepkg -s
   sudo pacman -U --noconfirm ./aconfmgr-*.pkg.tar.zst
   aconfmgr --config config check
