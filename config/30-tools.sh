@@ -8,10 +8,11 @@ AddPackage fisher # A package manager for the fish shell
 AddPackage zsh # A very advanced and programmable command interpreter (shell) for UNIX
 
 ## TUI
-AddPackage tmux # Terminal multiplexer
+AddPackage zellij # A terminal multiplexer
 AddPackage neovim # Fork of Vim aiming to improve user experience, plugins, and GUIs
 AddPackage yazi # Blazing fast terminal file manager written in Rust, based on async I/O
 AddPackage xh # Friendly and fast tool for sending HTTP requests
+AddPackage ouch # A command line utility for easily compressing and decompressing files and directories
 
 # Sysadmin
 
