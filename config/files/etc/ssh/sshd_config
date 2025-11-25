@@ -5,5 +5,6 @@ TCPKeepAlive yes
 UsePAM yes
 
 AcceptEnv TMUX
+AcceptEnv ZELLIJ
 
 Subsystem sftp /usr/lib/ssh/sftp-server
