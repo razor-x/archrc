@@ -67,7 +67,7 @@ install_aconfmgr () (
   temp_dir=$(mktemp -d)
   trap "rm -rf $temp_dir; exit" HUP INT TERM PIPE EXIT
   cd "$temp_dir" || exit 4
-  sudo pacman -S --noconfirm git cargo
+  sudo pacman -S --noconfirm git
   git clone https://aur.archlinux.org/aconfmgr-git.git
   cd aconfmgr-git || exit 5
   makepkg -s
