@@ -14,6 +14,30 @@ AddPackage yazi # Blazing fast terminal file manager written in Rust, based on a
 AddPackage xh # Friendly and fast tool for sending HTTP requests
 AddPackage ouch # A command line utility for easily compressing and decompressing files and directories
 
+## TODO
+AddPackage bat # Cat clone with syntax highlighting and git integration
+AddPackage broot # Fuzzy Search + tree + cd
+AddPackage dust # A more intuitive version of du in rust
+AddPackage eza # A modern replacement for ls (community fork of exa)
+AddPackage fd # Simple, fast and user-friendly alternative to find
+AddPackage fx # Command-line tool and terminal JSON viewer
+AddPackage fzf # Command-line fuzzy finder
+AddPackage git-delta # Syntax-highlighting pager for git and diff output
+AddPackage gitui # Blazing fast terminal-ui for git written in Rust
+AddPackage go-yq # Portable command-line YAML processor
+AddPackage hyperfine # A command-line benchmarking tool
+AddPackage just # A handy way to save and run project-specific commands
+AddPackage procs # A modern replacement for ps written in Rust
+AddPackage sd # Intuitive find & replace
+AddPackage zenith # Terminal system monitor with histograms
+AddPackage zoxide # A smarter cd command for your terminal
+AddPackage nushell # A new type of shell
+AddPackage shellcheck # Shell script analysis tool
+AddPackage dua-cli # A tool to conveniently learn about the disk usage of directories, fast!
+AddPackage presenterm # A markdown terminal slideshow tool
+AddPackage ripgrep-all # rga: ripgrep, but also search in PDFs, E-Books, Office documents, zip, tar.gz, etc.
+AddPackage wiki-tui # A simple and easy to use Wikipedia Text User Interface
+
 # Sysadmin
 
 ## Configuration
