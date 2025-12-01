@@ -23,6 +23,7 @@ SystemdEnable systemd-timesyncd
 
 ## Console
 AddPackage terminus-font # Monospace bitmap font (for X11 and console)
+AddPackage kitty-terminfo # Terminfo for kitty, an OpenGL-based terminal emulator
 CopyFile /etc/vconsole.conf
 
 ## Network
