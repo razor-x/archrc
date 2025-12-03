@@ -66,7 +66,8 @@ AddPackage whois # Intelligent WHOIS client
 
 ## Util
 AddPackage curl # command line tool and library for transferring data with URLs
-AddPackage jq # Command-line JSON processor
+AddPackage jaq # A jq clone focussed on correctness, speed, and simplicity
+CreateLink /usr/local/bin/jq /usr/bin/jaq
 AddPackage less # A terminal based program for viewing text files
 AddPackage man-db # A utility for reading man pages
 AddPackage man-pages # Linux man pages
