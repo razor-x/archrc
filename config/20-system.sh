@@ -23,6 +23,8 @@ SystemdEnable systemd-timesyncd
 
 ## Console
 AddPackage terminus-font # Monospace bitmap font (for X11 and console)
+AddPackage foot-terminfo # Extra non-standard terminfo files for foot, a Wayland terminal emulator
+AddPackage ghostty-terminfo # Terminfo for ghostty
 AddPackage kitty-terminfo # Terminfo for kitty, an OpenGL-based terminal emulator
 CopyFile /etc/vconsole.conf
 
