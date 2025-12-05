@@ -6,6 +6,5 @@ UsePAM yes
 
 AcceptEnv TMUX
 AcceptEnv ZELLIJ
-AcceptEnv KITTY_PID
 
 Subsystem sftp /usr/lib/ssh/sftp-server
