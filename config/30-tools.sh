@@ -15,6 +15,7 @@ AddPackage xh # Friendly and fast tool for sending HTTP requests
 AddPackage ouch # A command line utility for easily compressing and decompressing files and directories
 
 ## TODO
+AddPackage atuin # Magical shell history
 AddPackage bat # Cat clone with syntax highlighting and git integration
 AddPackage broot # Fuzzy Search + tree + cd
 AddPackage dust # A more intuitive version of du in rust
@@ -66,8 +67,14 @@ AddPackage whois # Intelligent WHOIS client
 
 ## Util
 AddPackage curl # command line tool and library for transferring data with URLs
+
 AddPackage jaq # A jq clone focussed on correctness, speed, and simplicity
 CreateLink /usr/local/bin/jq /usr/bin/jaq
+RemoveFile /usr/local/bin/jq
+RemoveFile /usr/local/bin
+RemoveFile /usr/local
+RemoveFile /usr
+
 AddPackage less # A terminal based program for viewing text files
 AddPackage man-db # A utility for reading man pages
 AddPackage man-pages # Linux man pages
