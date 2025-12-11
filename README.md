@@ -4,13 +4,9 @@ My Arch Linux configuration managed with [aconfmgr].
 
 ## Requirements
 
-These requirements are handled automatically when bootstrapping a new system.
-
-* [aconfmgr].
-* [Aura].
+* [aconfmgr]: Installed automatically when bootstrapping a new system.
 
 [aconfmgr]: https://github.com/CyberShadow/aconfmgr
-[Aura]: https://fosskers.github.io/aura/
 
 ## Maintaining an existing Arch Linux system
 
