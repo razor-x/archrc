@@ -4,15 +4,18 @@
 AddPackage fish # Smart and user friendly shell intended mostly for interactive use
 AddPackage fisher # A package manager for the fish shell
 
-## ZSH
+## nushell
+AddPackage nushell # A new type of shell
+
+## Zsh
 AddPackage zsh # A very advanced and programmable command interpreter (shell) for UNIX
 
 ## TUI
-AddPackage zellij # A terminal multiplexer
 AddPackage neovim # Fork of Vim aiming to improve user experience, plugins, and GUIs
-AddPackage yazi # Blazing fast terminal file manager written in Rust, based on async I/O
-AddPackage xh # Friendly and fast tool for sending HTTP requests
 AddPackage ouch # A command line utility for easily compressing and decompressing files and directories
+AddPackage xh # Friendly and fast tool for sending HTTP requests
+AddPackage yazi # Blazing fast terminal file manager written in Rust, based on async I/O
+AddPackage zellij # A terminal multiplexer
 
 ## TODO
 AddPackage atuin # Magical shell history
@@ -32,7 +35,6 @@ AddPackage procs # A modern replacement for ps written in Rust
 AddPackage sd # Intuitive find & replace
 AddPackage zenith # Terminal system monitor with histograms
 AddPackage zoxide # A smarter cd command for your terminal
-AddPackage nushell # A new type of shell
 AddPackage shellcheck # Shell script analysis tool
 AddPackage dua-cli # A tool to conveniently learn about the disk usage of directories, fast!
 AddPackage presenterm # A markdown terminal slideshow tool
