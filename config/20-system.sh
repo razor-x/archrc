@@ -76,6 +76,7 @@ CopyFile /etc/sudoers
 
 ## PAM
 CopyFile /etc/security/faillock.conf
+CopyFile /etc/security/pam_env.conf
 
 ## nftables
 AddPackage nftables # Netfilter tables userspace tools
