@@ -39,6 +39,7 @@ fi
 
 ## DNS
 CopyFile /etc/systemd/resolved.conf.d/99-fallback.conf
+CreateLink /etc/resolv.conf ../run/systemd/resolve/stub-resolv.conf
 SystemdEnable systemd-resolved
 
 ## VirtualBox

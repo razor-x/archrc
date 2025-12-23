@@ -115,6 +115,12 @@ Save the fstab to the installed system
 # genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
+Create link to systemd-resolved stub resolver
+
+```
+# ln -sf ../run/systemd/resolve/stub-resolv.conf /mnt/etc/resolv.conf
+```
+
 Install systemd-boot to the ESP
 
 ```
