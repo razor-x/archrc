@@ -42,6 +42,7 @@ AddPackage presenterm # A markdown terminal slideshow tool
 AddPackage ripgrep-all # rga: ripgrep, but also search in PDFs, E-Books, Office documents, zip, tar.gz, etc.
 AddPackage wiki-tui # A simple and easy to use Wikipedia Text User Interface
 AddPackage caddy # Fast web server with automatic HTTPS
+AddPackage dynocsv # Exports DynamoDB table into CSV
 
 # Sysadmin
 
