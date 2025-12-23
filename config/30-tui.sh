@@ -18,7 +18,7 @@ AddPackage yazi # Blazing fast terminal file manager written in Rust, based on a
 AddPackage zellij # A terminal multiplexer
 
 ## TODO
-AddPackage xdg-ninja --foreign # A shell script which checks your $HOME for unwanted files and directories
+AddPackage --foreign xdg-ninja # A shell script which checks your $HOME for unwanted files and directories
 AddPackage atuin # Magical shell history
 AddPackage bat # Cat clone with syntax highlighting and git integration
 AddPackage broot # Fuzzy Search + tree + cd
@@ -42,7 +42,7 @@ AddPackage presenterm # A markdown terminal slideshow tool
 AddPackage ripgrep-all # rga: ripgrep, but also search in PDFs, E-Books, Office documents, zip, tar.gz, etc.
 AddPackage wiki-tui # A simple and easy to use Wikipedia Text User Interface
 AddPackage caddy # Fast web server with automatic HTTPS
-AddPackage dynocsv --foreign # Exports DynamoDB table into CSV
+AddPackage --foreign dynocsv # Exports DynamoDB table into CSV
 
 # Sysadmin
 
