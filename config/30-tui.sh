@@ -18,6 +18,7 @@ AddPackage yazi # Blazing fast terminal file manager written in Rust, based on a
 AddPackage zellij # A terminal multiplexer
 
 ## TODO
+AddPackage xdg-ninja # A shell script which checks your $HOME for unwanted files and directories
 AddPackage atuin # Magical shell history
 AddPackage bat # Cat clone with syntax highlighting and git integration
 AddPackage broot # Fuzzy Search + tree + cd
