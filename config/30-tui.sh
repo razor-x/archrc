@@ -43,6 +43,7 @@ AddPackage ripgrep-all # rga: ripgrep, but also search in PDFs, E-Books, Office 
 AddPackage wiki-tui # A simple and easy to use Wikipedia Text User Interface
 AddPackage caddy # Fast web server with automatic HTTPS
 AddPackage glow # Command-line markdown renderer
+AddPackage tealdeer # A fast tldr client in Rust
 AddPackage --foreign dynocsv # Exports DynamoDB table into CSV
 
 # Sysadmin
