@@ -21,7 +21,7 @@ apply: authenticate
   fi
 
   echo '==== AUTHENTICATING FOR archrc ===='
-  echo 'Authentication is required to .'
+  echo 'Authentication is required.'
   echo "Authenticating as: $(whoami)"
-  sudo echo
+  sudo true
   echo '==== AUTHENTICATING COMPLETE ===='
