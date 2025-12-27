@@ -5,15 +5,17 @@ My Arch Linux configuration managed with [aconfmgr].
 ## Requirements
 
 * [aconfmgr]: Installed automatically when bootstrapping a new system.
+* [just]: Installed automatically when bootstrapping a new system.
 
 [aconfmgr]: https://github.com/CyberShadow/aconfmgr
+[just]: https://just.systems/
 
 ## Maintaining an existing Arch Linux system
 
 Periodic maintenance consists of running
 
 ```
-$ ./save.sh
+$ just save
 ```
 
 If this results in uncommitted changes to the `config` directory,
@@ -23,7 +25,7 @@ The changes should be reviewed, sorted, documented, committed and pushed.
 After incorporating these changes, apply the system configuration
 
 ```
-$ ./apply.sh
+$ just apply
 ```
 
 ## Bootstrapping a new Arch Linux system
@@ -207,7 +209,7 @@ $ ./bootstrap.sh
 Install configuration and packages
 
 ```
-$ ./apply.sh
+$ just apply
 ```
 
 #### Reboot into your new Arch Linux system!

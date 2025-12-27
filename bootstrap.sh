@@ -118,6 +118,8 @@ main () {
   install_aconfmgr
   update_repo_remote
 
+  sudo pacman --sync --noconfirm just
+
   puts 'Bootstrapped' 'archrc'
 }
 
