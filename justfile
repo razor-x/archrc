@@ -12,7 +12,7 @@ apply: authenticate
   sudo locale-gen
   sudo mkinitcpio --preset linux
   sudo pkgfile --update
-  fish -c fish_update_completions
+  fish --command fish_update_completions
 
 [private]
 @authenticate:
