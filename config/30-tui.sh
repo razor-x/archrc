@@ -88,6 +88,7 @@ AddPackage man-db # A utility for reading man pages
 AddPackage man-pages # Linux man pages
 AddPackage moreutils # A growing collection of the unix tools that nobody thought to write thirty years ago
 AddPackage pkgfile # A tool to search for files in official repository packages
+SystemdEnable pkgfile-update.timer
 AddPackage rclone # rsync for cloud storage
 AddPackage ripgrep # A search tool that combines the usability of ag with the raw speed of grep
 AddPackage rsync # A fast and versatile file copying tool for remote and local files
