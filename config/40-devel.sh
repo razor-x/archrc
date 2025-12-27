@@ -65,6 +65,9 @@ AddPackage r # Language and environment for statistical computing and graphics
 ## Rust
 AddPackage rust # Systems programming language focused on safety, speed and concurrency
 
+# Shell
+AddPackage shellcheck # Shell script analysis tool
+
 # CLI
 
 AddPackage ctags # Generates an index file of language objects found in source files

@@ -36,7 +36,6 @@ AddPackage procs # A modern replacement for ps written in Rust
 AddPackage sd # Intuitive find & replace
 AddPackage zenith # Terminal system monitor with histograms
 AddPackage zoxide # A smarter cd command for your terminal
-AddPackage shellcheck # Shell script analysis tool
 AddPackage dua-cli # A tool to conveniently learn about the disk usage of directories, fast!
 AddPackage presenterm # A markdown terminal slideshow tool
 AddPackage ripgrep-all # rga: ripgrep, but also search in PDFs, E-Books, Office documents, zip, tar.gz, etc.
