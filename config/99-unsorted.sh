@@ -23,9 +23,3 @@ AddPackage rlwrap # Adds readline-style editing and history to programs
 AddPackage ruby-docs # Documentation files for Ruby
 AddPackage shfmt # Format shell programs
 AddPackage usage # A specification for CLIs
-
-
-# Thu Nov 27 10:56:17 PM PST 2025 - Unknown packages
-
-
-AddPackage entr # Run arbitrary commands when files change

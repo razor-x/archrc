@@ -45,6 +45,7 @@ AddPackage caddy # Fast web server with automatic HTTPS
 AddPackage glow # Command-line markdown renderer
 AddPackage tealdeer # A fast tldr client in Rust
 AddPackage --foreign dynocsv # Exports DynamoDB table into CSV
+AddPackage watchexec # Executes commands in response to file modifications
 
 # Sysadmin
 
