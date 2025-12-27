@@ -9,7 +9,7 @@ puts () {
 }
 
 set_hostname () {
-  hostname="$(uname -n)"
+  hostname="$(uname --nodename)"
   puts 'Setting' 'Hostname'
   echo "$hostname" | sudo tee /etc/hostname
   puts 'Set' 'Hostname'
@@ -21,22 +21,23 @@ set_clock () {
   puts 'Set' 'Hardware clock'
 
   puts 'Setting' 'Time zone'
-  sudo ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
+  sudo ln --symbolic --force /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
   puts 'Set' 'Time zone'
 }
 
 copy_fstab () {
   puts 'Save' 'fstab'
-  hostname="$(uname -n)"
+  hostname="$(uname --nodename)"
   cp /etc/fstab "config/files/etc/fstab.${hostname,,}"
   puts 'Saved' 'fstab'
 }
 
 patch_loader_entry () {
   puts 'Patch' 'Arch loader entry'
-  root_uuid="$(cat /etc/fstab | grep -oP 'UUID=\K\S+(?=\s+/\s)')"
-  hostname="$(uname -n)"
-  sed -i "s/__UUID__/$root_uuid/g" "config/files/boot/loader/entries/arch.${hostname,,}.conf"
+  root_uuid="$(cat /etc/fstab | grep --only-matching --perl-regexp 'UUID=\K\S+(?=\s+/\s)')"
+  hostname="$(uname --nodename)"
+  sed --in-place \
+    "s/__UUID__/$root_uuid/g" "config/files/boot/loader/entries/arch.${hostname,,}.conf"
   puts 'Patched' 'Arch loader entry'
 }
 
@@ -58,20 +59,21 @@ generate_ssh_key () {
   fi
 
   puts 'Generating' 'SSH key'
-  ssh-keygen -t ed25519 -f "$privkey" -N "" -C "$(whoami)@$(uname -n)-$(date -I)"
+  ssh-keygen -t ed25519 -f "$privkey" -N "" -C \
+    "$(whoami)@$(uname --nodename)-$(date --iso-8601)"
   puts 'Generated' 'SSH key'
 }
 
 install_aconfmgr () (
   puts 'Installing' 'aconfmgr'
-  temp_dir=$(mktemp -d)
-  trap "rm -rf $temp_dir; exit" HUP INT TERM PIPE EXIT
+  temp_dir=$(mktemp --directory)
+  trap "rm --recursive --force $temp_dir; exit" HUP INT TERM PIPE EXIT
   cd "$temp_dir" || exit 4
-  sudo pacman -S --noconfirm git
+  sudo pacman --sync --noconfirm git
   git clone https://aur.archlinux.org/aconfmgr-git.git
   cd aconfmgr-git || exit 5
-  makepkg -s
-  sudo pacman -U --noconfirm ./aconfmgr-*.pkg.tar.zst
+  makepkg --syncdeps
+  sudo pacman --upgrade --noconfirm ./aconfmgr-*.pkg.tar.zst
   aconfmgr --config config check
   puts 'Installed' 'aconfmgr'
 )
@@ -106,11 +108,11 @@ main () {
   if [[ -f "$privkey" ]]; then
     puts 'Skipping' 'SSH key generation'
   else
-    sudo pacman -S --noconfirm git openssh
+    sudo pacman --sync --noconfirm git openssh
     generate_ssh_key $privkey
   fi
 
-  sudo pacman -Syy
+  sudo pacman --sync --refresh --refresh
 
   generate_locale
   install_aconfmgr

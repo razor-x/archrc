@@ -14,7 +14,7 @@ main () {
   sudo echo
   echo '==== AUTHENTICATING COMPLETE ===='
 
-  sudo pacman -Syy
+  sudo pacman --sync --refresh --refresh
 
   aconfmgr --config config apply
 
@@ -22,7 +22,7 @@ main () {
   aconfmgr --config config apply
 
   sudo locale-gen
-  sudo mkinitcpio -p linux
+  sudo mkinitcpio --preset linux
 
   if command -v pkgfile &> /dev/null; then
     sudo pkgfile --update

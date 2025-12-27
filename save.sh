@@ -14,7 +14,7 @@ main () {
   sudo echo
   echo '==== AUTHENTICATING COMPLETE ===='
 
-  sudo pacman -Syy
+  sudo pacman --sync --refresh --refresh
 
   aconfmgr --config config save
 }
