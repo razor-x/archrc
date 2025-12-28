@@ -10,6 +10,7 @@ AddPackage sqlite # A C library that implements an SQL database engine
 # Languages
 
 ## C
+AddPackage cmake # A cross-platform open-source make system
 AddPackage gcc # The GNU Compiler Collection - C and C++ frontends
 AddPackage gcc-fortran # Fortran front-end for GCC
 AddPackage clang # C language family frontend for LLVM
