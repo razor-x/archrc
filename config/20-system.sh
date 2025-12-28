@@ -56,6 +56,15 @@ fi
 
 # Packages
 
+## Config
+sed -i \
+  '/OPTIONS=/s/ debug / !debug /' \
+  "$(GetPackageOriginalFile pacman /etc/makepkg.conf)" # Disable debug packages
+
+sed -i \
+  's/#NoExtract   =/NoExtract   = etc\/pacman.d\/mirrorlist/' \
+  "$(GetPackageOriginalFile pacman /etc/pacman.conf)" # Manage mirrorlist via reflector
+
 ## paccache
 AddPackage pacman-contrib # Contributed scripts and tools for pacman systems
 SystemdEnable paccache.timer
@@ -71,9 +80,6 @@ SystemdEnable pkgfile-update.timer
 
 ## Aura
 AddPackage --foreign aura # A package manager for Arch Linux and its AUR
-sed -i \
-  "/OPTIONS=/s/ debug / !debug /" \
-  "$(GetPackageOriginalFile pacman /etc/makepkg.conf)" # Disable debug packages
 
 # Security
 
