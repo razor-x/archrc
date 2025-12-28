@@ -60,7 +60,6 @@ fi
 sed -i \
   '/OPTIONS=/s/ debug / !debug /' \
   "$(GetPackageOriginalFile pacman /etc/makepkg.conf)" # Disable debug packages
-
 sed -i \
   's/#NoExtract   =/NoExtract   = etc\/pacman.d\/mirrorlist/' \
   "$(GetPackageOriginalFile pacman /etc/pacman.conf)" # Manage mirrorlist via reflector
