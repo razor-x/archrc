@@ -31,7 +31,6 @@ AddPackage git-delta # Syntax-highlighting pager for git and diff output
 AddPackage gitui # Blazing fast terminal-ui for git written in Rust
 AddPackage go-yq # Portable command-line YAML processor
 AddPackage hyperfine # A command-line benchmarking tool
-AddPackage just # A handy way to save and run project-specific commands
 AddPackage procs # A modern replacement for ps written in Rust
 AddPackage sd # Intuitive find & replace
 AddPackage zenith # Terminal system monitor with histograms
