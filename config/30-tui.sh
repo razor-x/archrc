@@ -40,7 +40,9 @@ AddPackage tree # A directory listing program displaying a depth indented list o
 AddPackage which # A utility to show the full path of commands
 AddPackage zoxide # A smarter cd command for your terminal
 AddPackage ouch # A command line utility for easily compressing and decompressing files and directories
+AddPackage pastel # A command-line tool to generate, analyze, convert and manipulate colors
 AddPackage --foreign mods # AI for the command line, built for pipelines
+AddPackage --foreign freeze-bin # Generate images of code and terminal output.
 
 ## Documentation
 AddPackage man-db # A utility for reading man pages
@@ -49,6 +51,7 @@ AddPackage tealdeer # A fast tldr client in Rust
 
 ## Data
 AddPackage curl # command line tool and library for transferring data with URLs
+AddPackage fq # Tool, language and decoders for inspecting binary data
 AddPackage fx # Command-line tool and terminal JSON viewer
 AddPackage go-yq # Portable command-line YAML processor
 AddPackage wget # Network utility to retrieve files from the web
@@ -86,6 +89,7 @@ AddPackage procs # A modern replacement for ps written in Rust
 AddPackage zenith # Terminal system monitor with histograms
 
 ## Hardware
+AddPackage caligula # A user-friendly, lightweight TUI for disk imaging
 AddPackage efivar # Tools and libraries to work with EFI variables
 AddPackage gptfdisk # A text-mode partitioning tool that works on GUID Partition Table (GPT) disks
 AddPackage lsof # Lists open files for running Unix processes

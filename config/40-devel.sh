@@ -77,3 +77,4 @@ AddPackage hyperfine # A command-line benchmarking tool
 AddPackage caddy # Fast web server with automatic HTTPS
 AddPackage watchexec # Executes commands in response to file modifications
 AddPackage strace # A diagnostic, debugging and instructional userspace tracer
+AddPackage kondo # Save disk space by cleaning non-essential files from software projects
