@@ -95,7 +95,6 @@ SystemdEnable sshd
 CopyFile /etc/ssh/sshd_config.d/99-auth.conf
 CopyFile /etc/ssh/sshd_config.d/99-env.conf
 CopyFile /etc/ssh/sshd_config.d/99-network.conf
-CopyFile /etc/ssh/sshd_config.d/99-sftp.conf
 
 # Performance
 
