@@ -61,7 +61,7 @@ SystemdEnable paccache.timer
 ## Reflector
 AddPackage reflector # A Python 3 module and script to retrieve and filter the latest Pacman mirror list.
 CopyFile /etc/xdg/reflector/reflector.conf
-SystemdEnable reflector
+SystemdEnable reflector.timer
 
 # pkgfile
 AddPackage pkgfile # A tool to search for files in official repository packages
