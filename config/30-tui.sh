@@ -47,6 +47,7 @@ AddPackage --foreign freeze-bin # Generate images of code and terminal output.
 ## Documentation
 AddPackage man-db # A utility for reading man pages
 AddPackage man-pages # Linux man pages
+AddPackage navi # An interactive cheatsheet tool for the command-line
 AddPackage tealdeer # A fast tldr client in Rust
 
 ## Data
