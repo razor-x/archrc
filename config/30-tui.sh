@@ -41,7 +41,7 @@ AddPackage which # A utility to show the full path of commands
 AddPackage zoxide # A smarter cd command for your terminal
 AddPackage ouch # A command line utility for easily compressing and decompressing files and directories
 AddPackage pastel # A command-line tool to generate, analyze, convert and manipulate colors
-AddPackage --foreign mods # AI for the command line, built for pipelines
+AddPackage --foreign mods-bin # AI for the command line, built for pipelines
 AddPackage --foreign freeze-bin # Generate images of code and terminal output.
 
 ## Documentation
