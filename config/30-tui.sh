@@ -10,46 +10,50 @@ AddPackage nushell # A new type of shell
 ## Zsh
 AddPackage zsh # A very advanced and programmable command interpreter (shell) for UNIX
 
+## Atuin
+AddPackage atuin # Magical shell history
+
 ## TUI
 AddPackage neovim # Fork of Vim aiming to improve user experience, plugins, and GUIs
 AddPackage ouch # A command line utility for easily compressing and decompressing files and directories
-AddPackage xh # Friendly and fast tool for sending HTTP requests
 AddPackage yazi # Blazing fast terminal file manager written in Rust, based on async I/O
 AddPackage zellij # A terminal multiplexer
+AddPackage gitui # Blazing fast terminal-ui for git written in Rust
+AddPackage presenterm # A markdown terminal slideshow tool
 
 ## TODO
-AddPackage --foreign xdg-ninja # A shell script which checks your $HOME for unwanted files and directories
-AddPackage atuin # Magical shell history
 AddPackage bat # Cat clone with syntax highlighting and git integration
 AddPackage broot # Fuzzy Search + tree + cd
 AddPackage dust # A more intuitive version of du in rust
 AddPackage eza # A modern replacement for ls (community fork of exa)
 AddPackage fd # Simple, fast and user-friendly alternative to find
-AddPackage fx # Command-line tool and terminal JSON viewer
 AddPackage fzf # Command-line fuzzy finder
 AddPackage git-delta # Syntax-highlighting pager for git and diff output
-AddPackage gitui # Blazing fast terminal-ui for git written in Rust
-AddPackage go-yq # Portable command-line YAML processor
 AddPackage hyperfine # A command-line benchmarking tool
 AddPackage procs # A modern replacement for ps written in Rust
 AddPackage sd # Intuitive find & replace
 AddPackage zenith # Terminal system monitor with histograms
 AddPackage zoxide # A smarter cd command for your terminal
 AddPackage dua-cli # A tool to conveniently learn about the disk usage of directories, fast!
-AddPackage presenterm # A markdown terminal slideshow tool
 AddPackage ripgrep-all # rga: ripgrep, but also search in PDFs, E-Books, Office documents, zip, tar.gz, etc.
 AddPackage wiki-tui # A simple and easy to use Wikipedia Text User Interface
 AddPackage caddy # Fast web server with automatic HTTPS
 AddPackage glow # Command-line markdown renderer
 AddPackage tealdeer # A fast tldr client in Rust
-AddPackage --foreign dynocsv # Exports DynamoDB table into CSV
 AddPackage watchexec # Executes commands in response to file modifications
+
+## Data
+AddPackage xh # Friendly and fast tool for sending HTTP requests
+AddPackage fx # Command-line tool and terminal JSON viewer
+AddPackage go-yq # Portable command-line YAML processor
+AddPackage --foreign dynocsv # Exports DynamoDB table into CSV
 
 # Sysadmin
 
 ## Configuration
 AddPackage chezmoi # Manage your dotfiles across multiple machines
 AddPackage --foreign aconfmgr-git # A configuration manager for Arch Linux
+AddPackage --foreign xdg-ninja # A shell script which checks your $HOME for unwanted files and directories
 
 ## Hardware
 AddPackage efivar # Tools and libraries to work with EFI variables
