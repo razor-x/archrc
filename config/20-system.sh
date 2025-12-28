@@ -77,7 +77,8 @@ sed -i \
 
 ## sudo
 AddPackage sudo # Give certain users the ability to run some commands as root
-CopyFile /etc/sudoers
+CopyFile /etc/sudoers.d/01_root
+CopyFile /etc/sudoers.d/02_commands
 
 ## PAM
 CopyFile /etc/security/faillock.conf

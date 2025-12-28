@@ -142,7 +142,7 @@ Enter arch-chroot
 ```
 # pacman-key --init
 # pacman-key --populate archlinux
-# pacman -S git inetutils
+# pacman -S git inetutils sudo
 ```
 
 For systems with wireless cards, ensure `iwctl` will be available on first boot
@@ -174,9 +174,11 @@ Clone this repo
 Manually install the `sudoers` file
 
 ```
-# cp /root/archrc/config/files/etc/sudoers /etc
+# cp /root/archrc/config/files/etc/sudoers.d/01_root /etc/sudoers.d
 # rm -rf /root/archrc
 ```
+
+Create the non-root user
 
 ```
 # useradd -m -G wheel razorx

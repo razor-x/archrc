@@ -1,4 +1,2 @@
-root   ALL = (ALL) ALL
-%wheel ALL = (ALL) ALL
 %wheel ALL = (root) NOPASSWD: /usr/bin/poweroff
 %wheel ALL = (root) NOPASSWD: /usr/bin/reboot
