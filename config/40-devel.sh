@@ -71,6 +71,9 @@ AddPackage shellcheck # Shell script analysis tool
 # CLI
 
 AddPackage ctags # Generates an index file of language objects found in source files
-AddPackage github-cli # The GitHub CLI
 AddPackage just # A handy way to save and run project-specific commands
 AddPackage mise # The front-end to your dev env
+AddPackage hyperfine # A command-line benchmarking tool
+AddPackage caddy # Fast web server with automatic HTTPS
+AddPackage watchexec # Executes commands in response to file modifications
+AddPackage strace # A diagnostic, debugging and instructional userspace tracer

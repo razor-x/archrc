@@ -63,6 +63,10 @@ AddPackage reflector # A Python 3 module and script to retrieve and filter the l
 CopyFile /etc/xdg/reflector/reflector.conf
 SystemdEnable reflector
 
+# pkgfile
+AddPackage pkgfile # A tool to search for files in official repository packages
+SystemdEnable pkgfile-update.timer
+
 ## Aura
 AddPackage --foreign aura # A package manager for Arch Linux and its AUR
 sed -i \
