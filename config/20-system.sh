@@ -16,7 +16,9 @@ CopyFile /boot/loader/loader.conf 755
 
 ## Locale
 CopyFile /etc/locale.conf
-CopyFile /etc/locale.gen
+sed -i \
+  's/^#\(en_US.UTF-8\)/\1/g' \
+  "$(GetPackageOriginalFile glibc /etc/locale.gen)"
 
 ## Time
 SystemdEnable systemd-timesyncd
