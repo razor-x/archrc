@@ -17,6 +17,7 @@ AddPackage zsh # A very advanced and programmable command interpreter (shell) fo
 
 ## TUI
 AddPackage broot # Fuzzy Search + tree + cd
+AddPackage crush # A powerful terminal-based AI assistant for developers, providing intelligent coding assistance directly in your terminal.
 AddPackage gitui # Blazing fast terminal-ui for git written in Rust
 AddPackage glow # Command-line markdown renderer
 AddPackage neovim # Fork of Vim aiming to improve user experience, plugins, and GUIs
