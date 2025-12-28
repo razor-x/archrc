@@ -40,6 +40,7 @@ AddPackage tree # A directory listing program displaying a depth indented list o
 AddPackage which # A utility to show the full path of commands
 AddPackage zoxide # A smarter cd command for your terminal
 AddPackage ouch # A command line utility for easily compressing and decompressing files and directories
+AddPackage --foreign mods # AI for the command line, built for pipelines
 
 ## Documentation
 AddPackage man-db # A utility for reading man pages
