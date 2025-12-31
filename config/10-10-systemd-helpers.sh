@@ -9,6 +9,17 @@ function SystemdEnable() {
   [[ $# -ne 1 ]] && FatalError "Expected 1 arguments, got $#."
   local unit=$1
   mkdir --parents "$tmp_dir"/systemd
-  touch "$tmp_dir/systemd/units"
-  printf "%s\n" "$unit" >> "$tmp_dir/systemd/units"
+  touch "$tmp_dir/systemd/enable-units"
+  printf "%s\n" "$unit" >> "$tmp_dir/systemd/enable-units"
+}
+
+# SystemdDisable
+#
+# Disable a systemd unit file.
+function SystemdDisable() {
+  [[ $# -ne 1 ]] && FatalError "Expected 1 arguments, got $#."
+  local unit=$1
+  mkdir --parents "$tmp_dir"/systemd
+  touch "$tmp_dir/systemd/disable-units"
+  printf "%s\n" "$unit" >> "$tmp_dir/systemd/disable-units"
 }

@@ -8,4 +8,10 @@ while read -r unit; do
   else
     echo "Unit not found: $unit"
   fi
-done < "$tmp_dir"/systemd/units
+done < "$tmp_dir"/systemd/enable-units
+
+while read -r unit; do
+  if systemctl cat "$unit" &>/dev/null; then
+    sudo systemctl disable "$unit"
+  fi
+done < "$tmp_dir"/systemd/disable-units
