@@ -28,6 +28,25 @@ After incorporating these changes, apply the system configuration
 $ just apply
 ```
 
+## Managing systemd units
+
+Use `SystemdEnable` to enable systemd units
+and `SystemdDisable` to disable systemd units.
+
+### Limitations
+
+- The units are only enabled or disabled.
+  They are not started, stopped, or restarted.
+- When updating the configuration to change which units are active,
+  do not remove the entry, instead switch `SystemdEnable` to `SystemdDisable` and vice versa.
+  This ensures the unit state is updated and not orphaned.
+- The `SystemdEnable` helper does not fail on missing units.
+  This is intentional because the unit may not exist until
+  the corresponding packages are installed.
+  To work around this, `aconfmgr apply` will be run twice to ensure all units are enabled.
+- The `SystemdDisable` helper does not fail on missing units.
+  This is intentional as the helper only guarantees that the unit is not enabled.
+
 ## Bootstrapping a new Arch Linux system
 
 ### Add the new system to this configuration
