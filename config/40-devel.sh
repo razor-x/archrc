@@ -1,15 +1,21 @@
-# Tools
+# Shared
 
-# Build
+## Tools
+AddPackage ctags # Generates an index file of language objects found in source files
+AddPackage hyperfine # A command-line benchmarking tool
 AddPackage just # A handy way to save and run project-specific commands
 AddPackage kondo # Save disk space by cleaning non-essential files from software projects
 AddPackage mise # The front-end to your dev env
+AddPackage strace # A diagnostic, debugging and instructional userspace tracer
 AddPackage watchexec # Executes commands in response to file modifications
 
-# Debug
-AddPackage ctags # Generates an index file of language objects found in source files
-AddPackage hyperfine # A command-line benchmarking tool
-AddPackage strace # A diagnostic, debugging and instructional userspace tracer
+## Libraries
+AddPackage blas-openblas # An optimized BLAS library based on GotoBLAS2 1.13 BSD (Provides BLAS/CBLAS/LAPACK/LAPACKE system-wide)
+AddPackage libffi # Portable foreign function interface library
+AddPackage libgit2 # A linkable library for Git
+AddPackage libyaml # YAML 1.1 library
+AddPackage perl-libwww # The World-Wide Web library for Perl
+AddPackage sqlite # A C library that implements an SQL database engine
 
 # Languages
 
@@ -70,14 +76,5 @@ AddPackage r # Language and environment for statistical computing and graphics
 ## Rust
 AddPackage rust # Systems programming language focused on safety, speed and concurrency
 
-# Shell
+## Shell
 AddPackage shellcheck # Shell script analysis tool
-
-# Libraries
-
-AddPackage blas-openblas # An optimized BLAS library based on GotoBLAS2 1.13 BSD (Provides BLAS/CBLAS/LAPACK/LAPACKE system-wide)
-AddPackage libffi # Portable foreign function interface library
-AddPackage libgit2 # A linkable library for Git
-AddPackage libyaml # YAML 1.1 library
-AddPackage perl-libwww # The World-Wide Web library for Perl
-AddPackage sqlite # A C library that implements an SQL database engine
