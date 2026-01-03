@@ -17,12 +17,13 @@ AddPackage libyaml # YAML 1.1 library
 AddPackage perl-libwww # The World-Wide Web library for Perl
 AddPackage sqlite # A C library that implements an SQL database engine
 
+## Native Modules
+AddPackage cmake # A cross-platform open-source make system
+AddPackage gcc-fortran # Fortran front-end for GCC
+
 # Languages
 
 ## C
-AddPackage cmake # A cross-platform open-source make system
-AddPackage gcc # The GNU Compiler Collection - C and C++ frontends
-AddPackage gcc-fortran # Fortran front-end for GCC
 AddPackage clang # C language family frontend for LLVM
 
 ## Clojure
@@ -33,7 +34,6 @@ AddPackage leiningen # Automate Clojure projects
 AddPackage go # Core compiler tools for the Go programming language
 
 ## Java
-AddPackage jdk-openjdk # OpenJDK Java 25 development kit
 
 ## Haskell
 AddPackage ghc # The Glasgow Haskell Compiler
