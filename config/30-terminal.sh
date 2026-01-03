@@ -33,14 +33,15 @@ AddPackage fd # Simple, fast and user-friendly alternative to find
 AddPackage fzf # Command-line fuzzy finder
 AddPackage less # A terminal based program for viewing text files
 AddPackage moreutils # A growing collection of the unix tools that nobody thought to write thirty years ago
+AddPackage ouch # A command line utility for easily compressing and decompressing files and directories
+AddPackage pandoc-cli # Conversion between documentation formats
+AddPackage pastel # A command-line tool to generate, analyze, convert and manipulate colors
 AddPackage ripgrep # A search tool that combines the usability of ag with the raw speed of grep
 AddPackage ripgrep-all # rga: ripgrep, but also search in PDFs, E-Books, Office documents, zip, tar.gz, etc.
 AddPackage sd # Intuitive find & replace
 AddPackage tree # A directory listing program displaying a depth indented list of files
 AddPackage which # A utility to show the full path of commands
 AddPackage zoxide # A smarter cd command for your terminal
-AddPackage ouch # A command line utility for easily compressing and decompressing files and directories
-AddPackage pastel # A command-line tool to generate, analyze, convert and manipulate colors
 AddPackage --foreign mods-bin # AI for the command line, built for pipelines
 AddPackage --foreign freeze-bin # Generate images of code and terminal output.
 

@@ -2,16 +2,14 @@
 
 # Build
 AddPackage just # A handy way to save and run project-specific commands
+AddPackage kondo # Save disk space by cleaning non-essential files from software projects
 AddPackage mise # The front-end to your dev env
 AddPackage watchexec # Executes commands in response to file modifications
-AddPackage kondo # Save disk space by cleaning non-essential files from software projects
 
 # Debug
 AddPackage ctags # Generates an index file of language objects found in source files
 AddPackage hyperfine # A command-line benchmarking tool
 AddPackage strace # A diagnostic, debugging and instructional userspace tracer
-
-AddPackage pandoc-cli # Conversion between documentation formats
 
 # Languages
 
