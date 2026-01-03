@@ -161,7 +161,7 @@ Enter arch-chroot
 ```
 # pacman-key --init
 # pacman-key --populate archlinux
-# pacman -S git inetutils sudo
+# pacman -S git inetutils
 ```
 
 For systems with wireless cards, ensure `iwctl` will be available on first boot
