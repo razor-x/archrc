@@ -8,6 +8,11 @@ puts () {
   echo "-- [${2:-}] ${1:-}"
 }
 
+initialize_pacman_keyring() {
+  pacman-key --init
+  pacman-key --populate archlinux
+}
+
 set_hostname () {
   hostname="$(uname --nodename)"
   puts 'Setting' 'Hostname'
@@ -103,6 +108,8 @@ main () {
 
   copy_fstab
   patch_loader_entry
+
+  initialize_pacman_keyring
 
   privkey="$HOME/.ssh/id_ed25519"
   if [[ -f "$privkey" ]]; then

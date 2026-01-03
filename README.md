@@ -127,7 +127,7 @@ Mount the partitions
 ### Install the base system
 
 ```
-# pacstrap -K /mnt base base-devel linux linux-firmware
+# pacstrap -K /mnt base base-devel linux linux-firmware git inetutils
 ```
 
 Save the fstab to the installed system
@@ -155,20 +155,6 @@ Enter arch-chroot
 ```
 
 ### Configure the installed system
-
-#### Install bootstrapping dependencies
-
-```
-# pacman-key --init
-# pacman-key --populate archlinux
-# pacman -S git inetutils
-```
-
-For systems with wireless cards, ensure `iwctl` will be available on first boot
-
-```
-# pacman -S iwd
-```
 
 #### Set the hostname
 
@@ -234,6 +220,12 @@ $ just apply
 ```
 
 #### Reboot into your new Arch Linux system!
+
+> [!TIP]
+> For systems with wireless cards, ensure `iwctl` will be available on first boot
+> ```
+> $ sudo pacman -S iwd
+> ```
 
 ```
 $ exit
