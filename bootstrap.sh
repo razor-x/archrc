@@ -8,11 +8,6 @@ puts () {
   echo "-- [${2:-}] ${1:-}"
 }
 
-initialize_pacman_keyring() {
-  pacman-key --init
-  pacman-key --populate archlinux
-}
-
 set_hostname () {
   hostname="$(uname --nodename)"
   puts 'Setting' 'Hostname'
@@ -44,6 +39,13 @@ patch_loader_entry () {
   sed --in-place \
     "s/__UUID__/$root_uuid/g" "config/files/boot/loader/entries/arch.${hostname,,}.conf"
   puts 'Patched' 'Arch loader entry'
+}
+
+initialize_pacman_keyring() {
+  puts 'Initializing' 'Keyring'
+  pacman-key --init
+  pacman-key --populate archlinux
+  puts 'Initialized' 'Keyring'
 }
 
 generate_locale () {
@@ -84,9 +86,9 @@ install_aconfmgr () (
 )
 
 update_repo_remote () (
-  puts 'Update' 'Repo remote'
+  puts 'Update' 'Repository remote URL'
   git remote set-url origin 'git@github.com:razor-x/archrc.git'
-  puts 'Updated' 'Repo remote'
+  puts 'Updated' 'Repository remote URL'
 )
 
 main () {
