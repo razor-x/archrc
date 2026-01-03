@@ -99,6 +99,7 @@ AddPackage usbutils # A collection of USB tools to query connected USB devices
 
 ## Network
 AddPackage bind # A complete, highly portable implementation of the DNS protocol
+AddPackage caddy # Fast web server with automatic HTTPS
 AddPackage dnssec-tools # libval & dnssec management tools
 AddPackage inetutils # A collection of common network programs
 AddPackage openbsd-netcat # TCP/IP swiss army knife. OpenBSD variant.
