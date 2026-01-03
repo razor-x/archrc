@@ -23,7 +23,7 @@ AddPackage gcc-fortran # Fortran front-end for GCC
 
 # Languages
 
-## C
+## C/C++
 AddPackage clang # C language family frontend for LLVM
 
 ## Clojure
@@ -32,6 +32,7 @@ AddPackage leiningen # Automate Clojure projects
 
 ## Go
 AddPackage go # Core compiler tools for the Go programming language
+AddPackage golangci-lint # Fast linters runner for Go
 
 ## Java
 
