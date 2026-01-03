@@ -32,10 +32,12 @@ AddPackage leiningen # Automate Clojure projects
 
 ## Go
 AddPackage go # Core compiler tools for the Go programming language
+AddPackage gopls # Language server for Go programming language
 AddPackage golangci-lint # Fast linters runner for Go
 
 ## Haskell
 AddPackage ghc # The Glasgow Haskell Compiler
+AddPackage haskell-language-server # LSP server for GHC
 AddPackage cabal-install # The command-line interface for Cabal and Hackage.
 
 ## Lua
