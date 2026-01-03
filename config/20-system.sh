@@ -16,7 +16,7 @@ CopyFile /boot/loader/loader.conf 755
 
 ## Locale
 CopyFile /etc/locale.conf
-sed -i \
+sed --in-place \
   's/^#\(en_US.UTF-8\)/\1/g' \
   "$(GetPackageOriginalFile glibc /etc/locale.gen)"
 
@@ -57,10 +57,10 @@ fi
 # Packages
 
 ## Config
-sed -i \
+sed --in-place \
   '/OPTIONS=/s/ debug / !debug /' \
   "$(GetPackageOriginalFile pacman /etc/makepkg.conf)" # Disable debug packages
-sed -i \
+sed --in-place \
   's/#NoExtract   =/NoExtract   = etc\/pacman.d\/mirrorlist/' \
   "$(GetPackageOriginalFile pacman /etc/pacman.conf)" # Manage mirrorlist via reflector
 
