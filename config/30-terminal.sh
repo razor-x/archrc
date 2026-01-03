@@ -40,7 +40,6 @@ AddPackage ripgrep # A search tool that combines the usability of ag with the ra
 AddPackage ripgrep-all # rga: ripgrep, but also search in PDFs, E-Books, Office documents, zip, tar.gz, etc.
 AddPackage sd # Intuitive find & replace
 AddPackage tree # A directory listing program displaying a depth indented list of files
-AddPackage which # A utility to show the full path of commands
 AddPackage zoxide # A smarter cd command for your terminal
 AddPackage --foreign mods-bin # AI for the command line, built for pipelines
 AddPackage --foreign freeze-bin # Generate images of code and terminal output.
@@ -95,7 +94,6 @@ AddPackage caligula # A user-friendly, lightweight TUI for disk imaging
 AddPackage efivar # Tools and libraries to work with EFI variables
 AddPackage gptfdisk # A text-mode partitioning tool that works on GUID Partition Table (GPT) disks
 AddPackage lsof # Lists open files for running Unix processes
-AddPackage pciutils # PCI bus configuration space access library and tools
 AddPackage usbutils # A collection of USB tools to query connected USB devices
 
 ## Network
