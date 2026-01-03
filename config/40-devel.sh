@@ -34,8 +34,6 @@ AddPackage leiningen # Automate Clojure projects
 AddPackage go # Core compiler tools for the Go programming language
 AddPackage golangci-lint # Fast linters runner for Go
 
-## Java
-
 ## Haskell
 AddPackage ghc # The Glasgow Haskell Compiler
 AddPackage cabal-install # The command-line interface for Cabal and Hackage.
