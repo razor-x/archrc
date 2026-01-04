@@ -21,6 +21,7 @@ AddPackage python-numexpr # Fast numerical array expression evaluator for Python
 AddPackage python-numpy # Scientific tools for Python
 AddPackage python-pandas # High-performance, easy-to-use data structures and data analysis tools for Python
 AddPackage python-pandas-datareader # Data readers extracted from the pandas codebase
+AddPackage python-scipy # Open-source software for mathematics, science, and engineering
 AddPackage sqlite # A C library that implements an SQL database engine
 AddPackage tk # A windowing toolkit for use with tcl
 
