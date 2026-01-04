@@ -15,10 +15,14 @@ AddPackage libffi # Portable foreign function interface library
 AddPackage libgit2 # A linkable library for Git
 AddPackage libyaml # YAML 1.1 library
 AddPackage perl-libwww # The World-Wide Web library for Perl
+AddPackage python-bottleneck # Fast NumPy array functions written in Cython
 AddPackage python-matplotlib # A python plotting library, making publication quality plots
+AddPackage python-numexpr # Fast numerical array expression evaluator for Python, NumPy, PyTables, pandas
 AddPackage python-numpy # Scientific tools for Python
 AddPackage python-pandas # High-performance, easy-to-use data structures and data analysis tools for Python
+AddPackage python-pandas-datareader # Data readers extracted from the pandas codebase
 AddPackage sqlite # A C library that implements an SQL database engine
+AddPackage tk # A windowing toolkit for use with tcl
 
 ## Native Modules
 AddPackage cmake # A cross-platform open-source make system
