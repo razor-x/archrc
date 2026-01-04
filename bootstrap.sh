@@ -4,18 +4,18 @@
 
 set -u
 
-puts () {
+puts() {
   echo "-- [${2:-}] ${1:-}"
 }
 
-set_hostname () {
+set_hostname() {
   hostname="$(uname --nodename)"
   puts 'Setting' 'Hostname'
   echo "$hostname" | sudo tee /etc/hostname
   puts 'Set' 'Hostname'
 }
 
-set_clock () {
+set_clock() {
   puts 'Setting' 'Hardware clock'
   sudo hwclock --systohc
   puts 'Set' 'Hardware clock'
@@ -25,14 +25,14 @@ set_clock () {
   puts 'Set' 'Time zone'
 }
 
-copy_fstab () {
+copy_fstab() {
   puts 'Save' 'fstab'
   hostname="$(uname --nodename)"
   cp /etc/fstab "config/files/etc/fstab.${hostname,,}"
   puts 'Saved' 'fstab'
 }
 
-patch_loader_entry () {
+patch_loader_entry() {
   puts 'Patch' 'Arch loader entry'
   root_uuid="$(cat /etc/fstab | grep --only-matching --perl-regexp 'UUID=\K\S+(?=\s+/\s)')"
   hostname="$(uname --nodename)"
@@ -48,7 +48,7 @@ initialize_pacman_keyring() {
   puts 'Initialized' 'Keyring'
 }
 
-generate_locale () {
+generate_locale() {
   puts 'Generating' 'Locale'
   sudo cp config/files/etc/locale.conf /etc/locale.conf
   sudo cp config/files/etc/locale.gen /etc/locale.gen
@@ -57,7 +57,7 @@ generate_locale () {
   puts 'Generated' 'Locale'
 }
 
-generate_ssh_key () {
+generate_ssh_key() {
   privkey="${1:-}"
 
   if [[ -z "$privkey" ]]; then
@@ -71,7 +71,7 @@ generate_ssh_key () {
   puts 'Generated' 'SSH key'
 }
 
-install_aconfmgr () (
+install_aconfmgr() (
   puts 'Installing' 'aconfmgr'
   temp_dir=$(mktemp --directory)
   trap "rm --recursive --force $temp_dir; exit" HUP INT TERM PIPE EXIT
@@ -85,13 +85,13 @@ install_aconfmgr () (
   puts 'Installed' 'aconfmgr'
 )
 
-update_repo_remote () (
+update_repo_remote() (
   puts 'Update' 'Repository remote URL'
   git remote set-url origin 'git@github.com:razor-x/archrc.git'
   puts 'Updated' 'Repository remote URL'
 )
 
-main () {
+main() {
   if [[ $EUID -eq 0 ]]; then
     echo 'Must not run as root.'
     exit 1
