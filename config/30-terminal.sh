@@ -28,6 +28,7 @@ AddPackage --foreign crush-bin # A powerful terminal-based AI assistant for deve
 
 ## Util
 AddPackage bat # Cat clone with syntax highlighting and git integration
+AddPackage bat-extras # Bash scripts that integrate bat with various command line tools
 AddPackage eza # A modern replacement for ls (community fork of exa)
 AddPackage fd # Simple, fast and user-friendly alternative to find
 AddPackage fzf # Command-line fuzzy finder
