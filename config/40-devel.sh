@@ -57,6 +57,13 @@ AddPackage ghc # The Glasgow Haskell Compiler
 AddPackage haskell-language-server # LSP server for GHC
 AddPackage cabal-install # The command-line interface for Cabal and Hackage.
 
+## JavaScript/TypeScript
+AddPackage nodejs # Evented I/O for V8 javascript ("Current" release)
+AddPackage typescript-language-server # Language Server Protocol (LSP) implementation for TypeScript using tsserver
+AddPackage npm # JavaScript package manager
+AddPackage pnpm # Fast, disk space efficient package manager
+AddPackage yarn # Fast, reliable, and secure dependency management
+
 ## Lua
 AddPackage lua # Powerful lightweight programming language designed for extending applications
 AddPackage lua-sec # Lua bindings for OpenSSL library to provide TLS/SSL communication for Lua 5.4
@@ -64,13 +71,6 @@ AddPackage lua-language-server # Lua Language Server coded by Lua
 AddPackage stylua # Deterministic code formatter for Lua
 AddPackage selene # Blazing-fast modern Lua linter written in Rust
 AddPackage luarocks # Deployment and management system for Lua modules
-
-## JavaScript/TypeScript
-AddPackage nodejs # Evented I/O for V8 javascript ("Current" release)
-AddPackage typescript-language-server # Language Server Protocol (LSP) implementation for TypeScript using tsserver
-AddPackage npm # JavaScript package manager
-AddPackage pnpm # Fast, disk space efficient package manager
-AddPackage yarn # Fast, reliable, and secure dependency management
 
 ## PHP
 AddPackage php # A general-purpose scripting language that is especially suited to web development
