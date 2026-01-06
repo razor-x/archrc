@@ -60,6 +60,10 @@ AddPackage cabal-install # The command-line interface for Cabal and Hackage.
 
 ## JavaScript/TypeScript
 AddPackage nodejs # Evented I/O for V8 javascript ("Current" release)
+AddPackage typescript # JavaScript with syntax for types
+AddPackage bun # Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one
+AddPackage deno # A secure runtime for JavaScript and TypeScript
+AddPackage eslint # An AST-based pattern checker for JavaScript
 AddPackage typescript-language-server # Language Server Protocol (LSP) implementation for TypeScript using tsserver
 AddPackage npm # JavaScript package manager
 AddPackage pnpm # Fast, disk space efficient package manager
