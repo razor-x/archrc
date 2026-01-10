@@ -24,7 +24,7 @@ AddPackage presenterm # A markdown terminal slideshow tool
 AddPackage wiki-tui # A simple and easy to use Wikipedia Text User Interface
 AddPackage yazi # Blazing fast terminal file manager written in Rust, based on async I/O
 AddPackage zellij # A terminal multiplexer
-AddPackage --foreign crush-bin # A powerful terminal-based AI assistant for developers, providing intelligent coding assistance directly in your terminal.
+AddPackage --foreign opencode-bin # The AI coding agent built for the terminal.
 
 ## Util
 AddPackage bat # Cat clone with syntax highlighting and git integration
