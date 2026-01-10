@@ -78,7 +78,7 @@ AddPackage pkgfile # A tool to search for files in official repository packages
 SystemdEnable pkgfile-update.timer
 
 ## Aura
-AddPackage --foreign aura # A package manager for Arch Linux and its AUR
+AddPackage --foreign aura-bin # A package manager for Arch Linux and its AUR - Prebuild binary
 
 # Security
 
