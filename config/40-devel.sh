@@ -99,8 +99,9 @@ AddPackage ruby-pry # A runtime developer console and IRB alternative with power
 
 ## Shell
 AddPackage bash-language-server # Bash language server implementation based on Tree Sitter and its grammar for Bash
-AddPackage shellcheck # Shell script analysis tool
 AddPackage shfmt # Format shell programs
+AddPackage --foreign shellcheck-bin # Shell script analysis tool (binary release, static)
+AddPackage --foreign shellcheck-bin-doc # Man pages for shellcheck-bin
 
 ## Web
 AddPackage vscode-css-languageserver # CSS/LESS/SCSS language server
