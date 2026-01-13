@@ -55,8 +55,8 @@ AddPackage golangci-lint # Fast linters runner for Go
 
 ## Haskell
 AddPackage ghc # The Glasgow Haskell Compiler
-AddPackage haskell-language-server # LSP server for GHC
 AddPackage cabal-install # The command-line interface for Cabal and Hackage.
+AddPackage --foreign haskell-language-server # Official haskell ide support via language server (LSP). Successor of ghcide & haskell-ide-engine.
 
 ## JavaScript/TypeScript
 AddPackage nodejs # Evented I/O for V8 javascript ("Current" release)
