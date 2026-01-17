@@ -78,8 +78,7 @@ AddPackage luarocks # Deployment and management system for Lua modules
 AddPackage php # A general-purpose scripting language that is especially suited to web development
 AddPackage composer # Dependency Manager for PHP
 AddPackage --foreign phpactor # PHP completion, refactoring, introspection tool and language server
-AddPackage --foreign php-cs-fixer # Analyzes some PHP source code and tries to fix coding standards issues (PSR-1 and PSR-2 compatible).
-AddPackage --foreign prettier-plugin-php # Prettier PHP Plugin
+AddPackage --foreign mago # PHP completion, refactoring, introspection tool and language server
 
 ## Python
 AddPackage python # The Python programming language
