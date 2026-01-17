@@ -58,7 +58,7 @@ AddPackage fx # Command-line tool and terminal JSON viewer
 AddPackage go-yq # Portable command-line YAML processor
 AddPackage wget # Network utility to retrieve files from the web
 AddPackage xh # Friendly and fast tool for sending HTTP requests
-AddPackage --foreign dynocsv # Exports DynamoDB table into CSV
+AddPackage --foreign dynocsv-bin # Exports DynamoDB table into CSV
 
 ## Git
 AddPackage git # the fast distributed version control system
