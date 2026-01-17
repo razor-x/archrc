@@ -82,6 +82,7 @@ AddPackage --foreign mago-bin # An extremely fast PHP linter, formatter, and sta
 
 ## Python
 AddPackage python # The Python programming language
+AddPackage pyright # Type checker for the Python language
 AddPackage bpython # Fancy ncurses interface to the Python interpreter
 AddPackage ruff # An extremely fast Python linter, written in Rust
 AddPackage python-pip # The PyPA recommended tool for installing Python packages
@@ -92,6 +93,7 @@ AddPackage uv # An extremely fast Python package installer and resolver written 
 AddPackage ruby # An object-oriented language for quick and easy programming
 AddPackage ruby-docs # Documentation files for Ruby
 AddPackage ruby-stdlib # Full Ruby StdLib including default gems, bundled gems and tools
+AddPackage ruby-sorbet-runtime # Sorbet's runtime type checking component
 AddPackage ruby-pry # A runtime developer console and IRB alternative with powerful introspection capabilities
 AddPackage rubocop # A Ruby code style checking and code formatting tool
 
