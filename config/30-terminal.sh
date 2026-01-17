@@ -65,7 +65,7 @@ AddPackage git # the fast distributed version control system
 AddPackage git-delta # Syntax-highlighting pager for git and diff output
 AddPackage git-lfs # Git extension for versioning large files
 AddPackage github-cli # The GitHub CLI
-AddPackage --foreign worktrunk-bin # Worktrunk is a CLI for git worktree management, designed for running AI agents in parallel.
+AddPackage --foreign worktrunk-bin # CLI for git worktree management, designed for running AI agents in parallel
 
 ## GPG
 AddPackage gnupg # Complete and free implementation of the OpenPGP standard
