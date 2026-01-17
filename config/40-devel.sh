@@ -33,12 +33,12 @@ AddPackage gcc-fortran # Fortran front-end for GCC
 #
 # Included for each language where possible:
 # - Compiler or interpreter
-# - Language Server Protocol (LSP)
 # - Standard libraries
+# - REPL
+# - Language Server Protocol (LSP)
 # - Package/project/dependency manager
 # - Formatter
 # - Linter
-# - REPL
 
 ## C/C++
 AddPackage clang # C language family frontend for LLVM
@@ -47,24 +47,21 @@ AddPackage clang # C language family frontend for LLVM
 AddPackage clojure # Lisp dialect for the JVM
 AddPackage leiningen # Automate Clojure projects
 AddPackage --foreign clojure-lsp-bin # Language Server (LSP) for Clojure
+AddPackage --foreign cljfmt-bin # A formatter for Clojure code
+AddPackage --foreign clj-kondo-bin # A minimal and opinionated linter for Clojure code that sparks joy.
 
 ## Go
 AddPackage go # Core compiler tools for the Go programming language
 AddPackage gopls # Language server for Go programming language
 AddPackage golangci-lint # Fast linters runner for Go
 
-## Haskell
-AddPackage ghc # The Glasgow Haskell Compiler
-AddPackage cabal-install # The command-line interface for Cabal and Hackage.
-AddPackage --foreign haskell-language-server # Official haskell ide support via language server (LSP). Successor of ghcide & haskell-ide-engine.
-
-## JavaScript/TypeScript
+## JavaScript/TypeScript/Web
 AddPackage nodejs # Evented I/O for V8 javascript ("Current" release)
 AddPackage typescript # JavaScript with syntax for types
+AddPackage typescript-language-server # Language Server Protocol (LSP) implementation for TypeScript using tsserver
 AddPackage bun # Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one
 AddPackage deno # A secure runtime for JavaScript and TypeScript
 AddPackage biome # Formatter, linter, and more for Javascript, Typescript, JSON, and CSS
-AddPackage typescript-language-server # Language Server Protocol (LSP) implementation for TypeScript using tsserver
 AddPackage npm # JavaScript package manager
 AddPackage pnpm # Fast, disk space efficient package manager
 AddPackage yarn # Fast, reliable, and secure dependency management
@@ -80,10 +77,12 @@ AddPackage luarocks # Deployment and management system for Lua modules
 ## PHP
 AddPackage php # A general-purpose scripting language that is especially suited to web development
 AddPackage composer # Dependency Manager for PHP
+AddPackage --foreign phpactor # PHP completion, refactoring, introspection tool and language server
+AddPackage --foreign php-cs-fixer # Analyzes some PHP source code and tries to fix coding standards issues (PSR-1 and PSR-2 compatible).
+AddPackage --foreign prettier-plugin-php # Prettier PHP Plugin
 
 ## Python
 AddPackage python # The Python programming language
-AddPackage python-lsp-server # Fork of the python-language-server project, maintained by the Spyder IDE team and the community
 AddPackage bpython # Fancy ncurses interface to the Python interpreter
 AddPackage ruff # An extremely fast Python linter, written in Rust
 AddPackage python-pip # The PyPA recommended tool for installing Python packages
@@ -93,17 +92,12 @@ AddPackage uv # An extremely fast Python package installer and resolver written 
 ## Ruby
 AddPackage ruby # An object-oriented language for quick and easy programming
 AddPackage ruby-docs # Documentation files for Ruby
-AddPackage ruby-lsp # An opinionated language server for Ruby
 AddPackage ruby-stdlib # Full Ruby StdLib including default gems, bundled gems and tools
 AddPackage ruby-pry # A runtime developer console and IRB alternative with powerful introspection capabilities
+AddPackage rubocop # A Ruby code style checking and code formatting tool
 
 ## Shell
 AddPackage bash-language-server # Bash language server implementation based on Tree Sitter and its grammar for Bash
 AddPackage shfmt # Format shell programs
 AddPackage --foreign shellcheck-bin # Shell script analysis tool (binary release, static)
 AddPackage --foreign shellcheck-bin-doc # Man pages for shellcheck-bin
-
-## Web
-AddPackage vscode-css-languageserver # CSS/LESS/SCSS language server
-AddPackage vscode-html-languageserver # HTML language server
-AddPackage vscode-json-languageserver # JSON language server
