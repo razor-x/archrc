@@ -100,4 +100,3 @@ AddPackage rubocop # A Ruby code style checking and code formatting tool
 AddPackage bash-language-server # Bash language server implementation based on Tree Sitter and its grammar for Bash
 AddPackage shfmt # Format shell programs
 AddPackage --foreign shellcheck-bin # Shell script analysis tool (binary release, static)
-AddPackage --foreign shellcheck-bin-doc # Man pages for shellcheck-bin
