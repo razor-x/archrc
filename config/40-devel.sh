@@ -95,6 +95,7 @@ AddPackage ruby # An object-oriented language for quick and easy programming
 AddPackage ruby-docs # Documentation files for Ruby
 AddPackage ruby-stdlib # Full Ruby StdLib including default gems, bundled gems and tools
 AddPackage ruby-pry # A runtime developer console and IRB alternative with powerful introspection capabilities
+AddPackage ruby-lsp # An opinionated language server for Ruby
 AddPackage rubocop # A Ruby code style checking and code formatting tool
 
 ## Shell
