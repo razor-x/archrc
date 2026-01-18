@@ -54,6 +54,7 @@ AddPackage --foreign clj-kondo-bin # A minimal and opinionated linter for Clojur
 AddPackage go # Core compiler tools for the Go programming language
 AddPackage gopls # Language server for Go programming language
 AddPackage golangci-lint # Fast linters runner for Go
+AddPackage --foreign golangci-lint-langserver-bin # golangci-lint language server
 
 ## JavaScript/TypeScript/Web
 AddPackage nodejs # Evented I/O for V8 javascript ("Current" release)
