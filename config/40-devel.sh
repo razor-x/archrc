@@ -66,6 +66,8 @@ AddPackage biome # Formatter, linter, and more for Javascript, Typescript, JSON,
 AddPackage npm # JavaScript package manager
 AddPackage pnpm # Fast, disk space efficient package manager
 AddPackage yarn # Fast, reliable, and secure dependency management
+AddPackage mdformat # CommonMark compliant Markdown formatter
+AddPackage --foreign mdformat-gfm-git # Mdformat plugin for GitHub-Flavored Markdown compatibility
 
 ## Lua
 AddPackage lua # Powerful lightweight programming language designed for extending applications
