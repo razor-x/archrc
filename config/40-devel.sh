@@ -79,7 +79,6 @@ AddPackage luarocks # Deployment and management system for Lua modules
 
 ## PHP
 AddPackage php # A general-purpose scripting language that is especially suited to web development
-AddPackage psalm # A static analysis tool for finding errors in PHP applications
 AddPackage composer # Dependency Manager for PHP
 AddPackage --foreign phpactor # PHP completion, refactoring, introspection tool and language server
 AddPackage --foreign mago-bin # An extremely fast PHP linter, formatter, and static analyzer, written in Rust.
