@@ -84,6 +84,7 @@ AddPackage --foreign aura-bin # A package manager for Arch Linux and its AUR - P
 
 ## sudo
 AddPackage sudo # Give certain users the ability to run some commands as root
+CopyFile /etc/sudoers.d/00_defaults 440
 CopyFile /etc/sudoers.d/01_root 440
 CopyFile /etc/sudoers.d/02_commands 440
 
