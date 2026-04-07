@@ -7,6 +7,7 @@ AddPackage just # A handy way to save and run project-specific commands
 AddPackage kondo # Save disk space by cleaning non-essential files from software projects
 AddPackage mise # The front-end to your dev env
 AddPackage strace # A diagnostic, debugging and instructional userspace tracer
+AddPackage tree-sitter-cli # CLI tool for developing, testing, and using Tree-sitter parsers
 AddPackage watchexec # Executes commands in response to file modifications
 
 ## Libraries
