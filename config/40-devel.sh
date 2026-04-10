@@ -83,6 +83,7 @@ AddPackage php # A general-purpose scripting language that is especially suited 
 AddPackage composer # Dependency Manager for PHP
 AddPackage --foreign phpactor # PHP completion, refactoring, introspection tool and language server
 AddPackage --foreign mago-bin # An extremely fast PHP linter, formatter, and static analyzer, written in Rust.
+CopyFile /etc/php/conf.d/extensions.ini
 
 ## Python
 AddPackage python # The Python programming language
