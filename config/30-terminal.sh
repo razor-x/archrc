@@ -25,6 +25,7 @@ AddPackage wiki-tui # A simple and easy to use Wikipedia Text User Interface
 AddPackage yazi # Blazing fast terminal file manager written in Rust, based on async I/O
 AddPackage zellij # A terminal multiplexer
 AddPackage --foreign opencode-bin # The AI coding agent built for the terminal.
+AddPackage --foreign pi-bin # AI coding agent for the terminal — minimal, extensible and optimized for tool-use (pi-mono)
 
 ## Util
 AddPackage bat # Cat clone with syntax highlighting and git integration
