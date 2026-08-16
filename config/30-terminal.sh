@@ -24,7 +24,6 @@ AddPackage gitui # Blazing fast terminal-ui for git written in Rust
 AddPackage glow # Command-line markdown renderer
 AddPackage neovim # Fork of Vim aiming to improve user experience, plugins, and GUIs
 AddPackage presenterm # A markdown terminal slideshow tool
-AddPackage wiki-tui # A simple and easy to use Wikipedia Text User Interface
 AddPackage yazi # Blazing fast terminal file manager written in Rust, based on async I/O
 AddPackage zellij # A terminal multiplexer
 
