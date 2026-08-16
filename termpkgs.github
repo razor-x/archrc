@@ -3,7 +3,6 @@ atuin	https://github.com/atuinsh/atuin
 bash-completion	https://github.com/scop/bash-completion
 bat	https://github.com/sharkdp/bat
 bat-extras	https://github.com/eth-p/bat-extras
-bind	NOT FOUND (upstream: https://www.isc.org/software/bind/)
 broot	https://github.com/Canop/broot
 caddy	https://github.com/caddyserver/caddy
 caligula	https://github.com/ifd3f/caligula
@@ -28,13 +27,8 @@ gitui	https://github.com/extrawurst/gitui
 glow	https://github.com/charmbracelet/glow
 gnupg	https://github.com/gpg/gnupg
 go-yq	https://github.com/mikefarah/yq
-gptfdisk	NOT FOUND (upstream: https://www.rodsbooks.com/gdisk/)
-inetutils	NOT FOUND (upstream: https://www.gnu.org/software/inetutils/)
 less	https://github.com/gwsw/less
 lsof	https://github.com/lsof-org/lsof
-man-db	https://github.com/whatwg/fetch
-man-pages	NOT FOUND (upstream: https://www.kernel.org/doc/man-pages/)
-moreutils	NOT FOUND (upstream: https://joeyh.name/code/moreutils/)
 navi	https://github.com/denisidoro/navi
 neovim	https://github.com/neovim/neovim
 nushell	https://github.com/nushell/nushell
@@ -42,7 +36,6 @@ openbsd-netcat	https://github.com/whatwg/fetch
 openssl	https://github.com/openssl/openssl
 ouch	https://github.com/ouch-org/ouch
 pastel	https://github.com/sharkdp/pastel
-pinentry	NOT FOUND (upstream: https://gnupg.org/related_software/pinentry/)
 presenterm	https://github.com/mfontanini/presenterm
 procs	https://github.com/dalance/procs
 rclone	https://github.com/rclone/rclone
@@ -51,20 +44,11 @@ ripgrep-all	https://github.com/phiresky/ripgrep-all
 rsync	https://github.com/RsyncProject/rsync
 sd	https://github.com/chmln/sd
 tealdeer	https://github.com/tealdeer-rs/tealdeer
-traceroute	NOT FOUND (upstream: http://traceroute.sourceforge.net)
-tree	https://github.com/whatwg/fetch
-unrar-free	https://github.com/whatwg/fetch
-unzip	NOT FOUND (upstream: http://infozip.sourceforge.net/UnZip.html)
-usbutils	NOT FOUND (upstream: https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/usbutils.git/)
-wget	NOT FOUND (upstream: https://www.gnu.org/software/wget/wget.html)
 whois	https://github.com/rfc1036/whois
-wiki-tui	NOT FOUND (package is absent from the configured sync databases)
 worktrunk	https://github.com/max-sixty/worktrunk
 xh	https://github.com/ducaale/xh
 yazi	https://github.com/sxyazi/yazi
-zellij	NOT FOUND (ambiguous candidates: https://github.com/sponsors/imsnif, https://github.com/zellij-org/zellij)
 zenith	https://github.com/bvaisvil/zenith
-zip	NOT FOUND (upstream: http://www.info-zip.org/Zip.html)
 zlib	https://github.com/madler/zlib
 zoxide	https://github.com/ajeetdsouza/zoxide
-zsh	NOT FOUND (upstream: https://www.zsh.org/)
+zellij	https://github.com/zellij-org/zellij
