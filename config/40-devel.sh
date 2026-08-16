@@ -10,6 +10,8 @@ AddPackage strace # A diagnostic, debugging and instructional userspace tracer
 AddPackage tree-sitter-cli # CLI tool for developing, testing, and using Tree-sitter parsers
 AddPackage watchexec # Executes commands in response to file modifications
 AddPackage --foreign nono-ai-bin # Secure, kernel-enforced sandbox for AI agents, MCP servers and LLM workloads using Landlock (pre-built binary)
+AddPackage --foreign opencode-bin # The AI coding agent built for the terminal.
+AddPackage --foreign pi-bin # AI coding agent for the terminal — minimal, extensible and optimized for tool-use (pi-mono)
 
 ## Libraries
 AddPackage blas-openblas # An optimized BLAS library based on GotoBLAS2 1.13 BSD (Provides BLAS/CBLAS/LAPACK/LAPACKE system-wide)
