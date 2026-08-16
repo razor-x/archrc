@@ -44,7 +44,6 @@ AddPackage sd # Intuitive find & replace
 AddPackage tree # A directory listing program displaying a depth indented list of files
 AddPackage zoxide # A smarter cd command for your terminal
 AddPackage --foreign freeze-bin # Generate images of code and terminal output.
-AddPackage --foreign mods-bin # AI for the command line, built for pipelines
 AddPackage --foreign pandoc-bin # Conversion between documentation formats
 
 ## Documentation
