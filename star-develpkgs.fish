@@ -1,20 +1,19 @@
 #!/usr/bin/env fish
 
-# Star every resolved repository in develpkgs.github and add it to the
-# authenticated user's "awesome-dev-tools" GitHub star list. Existing list
-# memberships are preserved. Finally, report list entries absent from input.
-# Usage: ./star-develpkgs.fish [resolved-repository-file]
+# Star every resolved repository in an input file and add it to a GitHub star
+# list. Existing list memberships are preserved. Finally, report remote list
+# entries absent from the local input.
+#
+# Usage: ./star-develpkgs.fish <resolved-file> <list URL|OWNER/SLUG|SLUG>
+# Example: ./star-develpkgs.fish develpkgs.github awesome-dev-tools
 
-set -l input_file develpkgs.github
-set -l target_list_owner razor-x
-set -l target_list_slug awesome-dev-tools
-
-if test (count $argv) -gt 1
-    echo "usage: "(status filename)" [resolved-repository-file]" >&2
+if test (count $argv) -ne 2
+    echo "usage: "(status filename)" <resolved-file> <list URL|OWNER/SLUG|SLUG>" >&2
     exit 2
-else if test (count $argv) -eq 1
-    set input_file $argv[1]
 end
+
+set -l input_file $argv[1]
+set -l list_reference $argv[2]
 
 if not test -r $input_file
     echo (status filename)": cannot read $input_file" >&2
@@ -30,8 +29,43 @@ set -l authenticated_user (gh api user --jq .login)
 if test $status -ne 0
     echo (status filename)": could not determine the authenticated GitHub user" >&2
     exit 1
-else if test (string lower -- $authenticated_user) != (string lower -- $target_list_owner)
-    echo (status filename)": expected GitHub user $target_list_owner, but gh is authenticated as $authenticated_user" >&2
+end
+
+set -l target_list_owner $authenticated_user
+set -l target_list_slug
+set -l list_parts (string match --regex --groups-only --ignore-case \
+    '^https://github\.com/stars/([^/]+)/lists/([^/?#]+)/?(?:[?#].*)?$' -- $list_reference)
+if test (count $list_parts) -eq 2
+    set target_list_owner $list_parts[1]
+    set target_list_slug $list_parts[2]
+else
+    set list_parts (string match --regex --groups-only '^([^/]+)/([^/]+)$' -- $list_reference)
+    if test (count $list_parts) -eq 2
+        set target_list_owner $list_parts[1]
+        set target_list_slug $list_parts[2]
+    else if string match --quiet --regex '^[^/]+$' -- $list_reference
+        set target_list_slug $list_reference
+    else
+        echo (status filename)": invalid GitHub list: $list_reference" >&2
+        exit 2
+    end
+end
+
+if test (string lower -- $authenticated_user) != (string lower -- $target_list_owner)
+    echo (status filename)": list owner is $target_list_owner, but gh is authenticated as $authenticated_user" >&2
+    echo "GitHub only permits modifying the authenticated user's lists." >&2
+    exit 1
+end
+
+# Updating GitHub star lists requires the classic OAuth `user` scope. Check it
+# before starring anything so an insufficient token cannot cause a partial run.
+set -l authenticated_scopes (gh auth status --active --hostname github.com \
+    --json hosts --jq '.hosts["github.com"][] | select(.active).scopes')
+set -l scope_list (string split , -- $authenticated_scopes | string trim)
+if not contains -- user $scope_list
+    echo (status filename)": the active gh token needs the 'user' scope" >&2
+    echo "Grant it, then rerun this script:" >&2
+    echo "  gh auth refresh --hostname github.com --scopes user" >&2
     exit 1
 end
 

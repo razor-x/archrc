@@ -1,17 +1,16 @@
 #!/usr/bin/env fish
 
 # Resolve each Arch package's upstream GitHub repository.
-# Usage: ./resolve-develpkgs.fish [package-file]
+# Usage: ./resolve-develpkgs.fish <package-file>
 # Output is saved beside the package file as <package-file>.github.
 # Each line is: <package>\t<GitHub repository URL or NOT FOUND note>
 
-set -l package_file develpkgs
-if test (count $argv) -gt 1
-    echo "usage: "(status filename)" [package-file]" >&2
+if test (count $argv) -ne 1
+    echo "usage: "(status filename)" <package-file>" >&2
     exit 2
-else if test (count $argv) -eq 1
-    set package_file $argv[1]
 end
+
+set -l package_file $argv[1]
 
 if not test -r $package_file
     echo (status filename)": cannot read $package_file" >&2
