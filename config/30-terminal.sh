@@ -15,6 +15,7 @@ AddPackage nushell # A new type of shell
 
 ## Zsh
 AddPackage zsh # A very advanced and programmable command interpreter (shell) for UNIX
+AddPackage zsh-completion # Additional completion definitions for Zsh
 
 # Core
 
