@@ -28,6 +28,13 @@ AddPackage presenterm # A markdown terminal slideshow tool
 AddPackage yazi # Blazing fast terminal file manager written in Rust, based on async I/O
 AddPackage zellij # A terminal multiplexer
 
+## Recoding
+AddPackage asciinema # Record and share terminal sessions
+AddPackage vhs # A tool for recording terminal GIFs
+AddPackage --foreign asciinema-agg-bin # asciinema gif generator (binary version)
+AddPackage --foreign freeze-bin # Generate images of code and terminal output.
+AddPackage --foreign t-rec-bin # Blazingly fast terminal recorder
+
 ## Util
 AddPackage bat # Cat clone with syntax highlighting and git integration
 AddPackage bat-extras # Bash scripts that integrate bat with various command line tools
@@ -43,7 +50,6 @@ AddPackage ripgrep-all # rga: ripgrep, but also search in PDFs, E-Books, Office 
 AddPackage sd # Intuitive find & replace
 AddPackage tree # A directory listing program displaying a depth indented list of files
 AddPackage zoxide # A smarter cd command for your terminal
-AddPackage --foreign freeze-bin # Generate images of code and terminal output.
 AddPackage --foreign pandoc-bin # Conversion between documentation formats
 
 ## Documentation
