@@ -58,6 +58,11 @@ AddPackage man-pages # Linux man pages
 AddPackage navi # An interactive cheatsheet tool for the command-line
 AddPackage tealdeer # A fast tldr client in Rust
 
+## Language
+AddPackage dictd # Online dictionary client and server
+AddPackage --foreign wordnet-dictd # Wordnet dictd files
+SystemdEnable dictd.service
+
 ## Data
 AddPackage curl # command line tool and library for transferring data with URLs
 AddPackage fq # Tool, language and decoders for inspecting binary data
