@@ -9,6 +9,7 @@ AddPackage mise # The front-end to your dev env
 AddPackage strace # A diagnostic, debugging and instructional userspace tracer
 AddPackage tree-sitter-cli # CLI tool for developing, testing, and using Tree-sitter parsers
 AddPackage watchexec # Executes commands in response to file modifications
+AddPackage --foreign linear-cli-schpet-bin # Linear without leaving the command line: list, start, and create PRs for linear issues. Agent friendly.
 AddPackage --foreign nono-ai-bin # Secure, kernel-enforced sandbox for AI agents, MCP servers and LLM workloads using Landlock (pre-built binary)
 AddPackage --foreign opencode-bin # The AI coding agent built for the terminal.
 AddPackage --foreign pi-bin # AI coding agent for the terminal — minimal, extensible and optimized for tool-use (pi-mono)
