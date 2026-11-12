@@ -33,6 +33,12 @@ AddPackage tk # A windowing toolkit for use with tcl
 AddPackage cmake # A cross-platform open-source make system
 AddPackage gcc-fortran # Fortran front-end for GCC
 
+# Containers
+
+AddPackage podman # A tool for managing OCI containers and pods.
+AddPackage podman-docker # Emulate Docker CLI using podman
+AddPackage podman-compose # A script to run docker-compose.yml using podman
+
 # Languages
 #
 # Included for each language where possible:
