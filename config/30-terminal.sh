@@ -79,6 +79,8 @@ AddPackage git-lfs # Git extension for versioning large files
 AddPackage github-cli # The GitHub CLI
 AddPackage worktrunk # CLI for Git worktree management, designed for parallel AI agent workflows
 AddPackage --foreign gh-dash-bin # A beautiful CLI dashboard extension for GitHub to display pull requests and issues with filters you care about
+AddPackage --foreign no-mistakes-bin # Kill all the slop. Raise clean PR.
+AddPackage --foreign treehouse-bin # Manage worktrees without managing worktrees
 
 ## GPG
 AddPackage gnupg # Complete and free implementation of the OpenPGP standard
