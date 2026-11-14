@@ -68,6 +68,8 @@ AddPackage curl # command line tool and library for transferring data with URLs
 AddPackage fq # Tool, language and decoders for inspecting binary data
 AddPackage fx # Command-line tool and terminal JSON viewer
 AddPackage go-yq # Portable command-line YAML processor
+AddPackage jq # Command-line JSON processor
+AddPackage jaq # A jq clone focussed on correctness, speed, and simplicity
 AddPackage wget # Network utility to retrieve files from the web
 AddPackage xh # Friendly and fast tool for sending HTTP requests
 AddPackage --foreign dynocsv-bin # Exports DynamoDB table into CSV
