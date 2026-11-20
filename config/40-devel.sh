@@ -116,3 +116,6 @@ AddPackage bash-language-server # Bash language server implementation based on T
 AddPackage shfmt # Format shell programs
 AddPackage --foreign fish-lsp # LSP implementation for the fish shell language 🐠
 AddPackage --foreign shellcheck-bin # Shell script analysis tool (binary release, static)
+
+## Misc
+AddPackage actionlint # Static checker for GitHub Actions workflow files
