@@ -2,7 +2,7 @@
 
 # shellcheck disable=SC2064,SC2086
 
-set -u
+set -o nounset
 
 puts() {
   echo "-- [${2:-}] ${1:-}"
