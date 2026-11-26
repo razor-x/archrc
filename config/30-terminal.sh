@@ -32,8 +32,6 @@ AddPackage zellij # A terminal multiplexer
 AddPackage asciinema # Record and share terminal sessions
 AddPackage vhs # A tool for recording terminal GIFs
 AddPackage --foreign asciinema-agg-bin # asciinema gif generator (binary version)
-AddPackage --foreign freeze-bin # Generate images of code and terminal output.
-AddPackage --foreign t-rec-bin # Blazingly fast terminal recorder
 
 ## Util
 AddPackage bat # Cat clone with syntax highlighting and git integration
@@ -72,7 +70,6 @@ AddPackage jq # Command-line JSON processor
 AddPackage jaq # A jq clone focussed on correctness, speed, and simplicity
 AddPackage wget # Network utility to retrieve files from the web
 AddPackage xh # Friendly and fast tool for sending HTTP requests
-AddPackage --foreign dynocsv-bin # Exports DynamoDB table into CSV
 
 ## Git
 AddPackage git # the fast distributed version control system
@@ -80,9 +77,6 @@ AddPackage git-delta # Syntax-highlighting pager for git and diff output
 AddPackage git-lfs # Git extension for versioning large files
 AddPackage github-cli # The GitHub CLI
 AddPackage worktrunk # CLI for Git worktree management, designed for parallel AI agent workflows
-AddPackage --foreign gh-dash-bin # A beautiful CLI dashboard extension for GitHub to display pull requests and issues with filters you care about
-AddPackage --foreign no-mistakes-bin # Kill all the slop. Raise clean PR.
-AddPackage --foreign treehouse-bin # Manage worktrees without managing worktrees
 
 ## GPG
 AddPackage gnupg # Complete and free implementation of the OpenPGP standard
